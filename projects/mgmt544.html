@@ -13,14 +13,15 @@
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="../css/styles.css" rel="stylesheet">
     <style>
-        /* Custom styling for the project page */
-        body {
-            background-color: #121212;
+        /* Gradient background for the project page */
+        .gradient-background {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
             color: #f0f0f0;
+            padding: 40px;
+            min-height: 100vh;
         }
-        /* Header section with Purdue arch image and overlay */
         .header-section {
-            background-image: url('../assets/img/bg-masthead.jpg');
+            background-image: url('../assets/img/purduearch.png');
             background-size: cover;
             background-position: center;
             padding: 100px 0;
@@ -34,7 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            background-color: rgba(0, 0, 0, 0.5);
         }
         .header-section h1 {
             font-size: 2.5em;
@@ -48,16 +49,7 @@
             z-index: 1;
             position: relative;
         }
-        /* Content section styling to match "About Me" */
-        .content-section {
-            padding: 40px;
-            background: linear-gradient(180deg, #1b1b1b, #121212);
-            color: #f0f0f0;
-        }
-        .content-section h2 {
-            color: #f0f0f0;
-        }
-        .content-section ul {
+        .content-section h2, .content-section p {
             color: #f0f0f0;
         }
         .code-section pre {
@@ -69,6 +61,7 @@
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
@@ -87,15 +80,15 @@
         </div>
     </nav>
 
-    <!-- Header Section with Purdue Arch Background Image -->
-    <header class="header-section">
-        <div class="overlay"></div> <!-- Overlay for text readability -->
+    <!-- Header Section with Background Image -->
+    <header class="header-section gradient-background">
+        <div class="overlay"></div>
         <h1>MGMT 544 - Database Management Systems</h1>
         <p>Exploring data-driven solutions for inventory management and waste reduction</p>
     </header>
 
     <!-- Main Content Section -->
-    <section class="content-section">
+    <section class="content-section gradient-background">
         <div class="container px-4 px-lg-5">
             <h2>Objective</h2>
             <p>Developed a database system to manage inventory for Fresh Harvest Grocery, aiming to track produce freshness and reduce waste.</p>
@@ -125,8 +118,8 @@ GROUP BY P.Category;
 
                 <h3>Employee Responsible for Restocking a Specific Product</h3>
                 <pre><code class="language-sql">
-SELECT E.EmployeeID, E.EmployeeFirstName_, E.EmployeeLastName, 
-       P.ProductID, P.Category_
+SELECT E.EmployeeID, E.EmployeeFirstName, E.EmployeeLastName, 
+       P.ProductID, P.Category
 FROM FreshHarvestDB.Product AS P 
 JOIN FreshHarvestDB.Employee AS E ON P.Employee_ID = E.EmployeeID
 WHERE P.ProductID = 1027;
@@ -138,7 +131,7 @@ WHERE P.ProductID = 1027;
     <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
         <div class="container px-4 px-lg-5">
-            Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast
+            &copy; 2024 Lama Aljuraisi
         </div>
     </footer>
 
@@ -146,5 +139,6 @@ WHERE P.ProductID = 1027;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS -->
     <script src="../js/scripts.js"></script>
+
 </body>
 </html>
