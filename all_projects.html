@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>MGMT 544 - Database Management Systems | Lama's Portfolio</title>
+    <title>All Projects | Lama's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <!-- Font Awesome icons -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -46,22 +46,34 @@
             z-index: 1;
             position: relative;
         }
-        .content-section {
+        .project-list-section {
             padding: 40px;
             background: linear-gradient(180deg, #1b1b1b, #121212);
-            color: #f0f0f0;
         }
-        .content-section h2 {
-            color: #f0f0f0;
-        }
-        .content-section ul {
-            color: #f0f0f0;
-        }
-        .code-section pre {
-            background-color: #333;
-            color: #f0f0f0;
-            padding: 15px;
+        .project-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #1e1e1e;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .project-item img {
+            width: 120px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .project-item h4 {
+            margin: 0;
+            color: #f0f0f0;
+            font-size: 1.3em;
+        }
+        .project-item p {
+            color: #ccc;
+            margin: 0;
+            font-size: 0.95em;
         }
     </style>
 </head>
@@ -76,38 +88,43 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../NewPortfolio/index.html#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../NewPortfolio/index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../NewPortfolio/index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section with Purdue Arch Background Image -->
+    <!-- Header Section with Background Image from mgmt544 page -->
     <header class="header-section">
         <div class="overlay"></div> <!-- Overlay for text readability -->
-        <h1>MGMT 544 - Database Management Systems</h1>
-        <p>Exploring data-driven solutions for inventory management and waste reduction</p>
+        <h1>My Projects</h1>
+        <p>A collection of my work showcasing data-driven insights and impactful analyses.</p>
     </header>
-    <!-- Main Content Section -->
-    <section class="content-section">
+
+    <!-- Projects List Section -->
+    <section class="project-list-section">
         <div class="container px-4 px-lg-5">
-            <div class="project-item d-flex align-items-center">
+            <!-- Project Item 1 -->
+            <div class="project-item">
                 <img src="../assets/img/project1.jpg" alt="Project 1 Image">
                 <div>
-                    <h3>Project 1: Data Analysis for XYZ Corp</h3>
-                    <p>A deep dive into sales and market trends for XYZ Corp. <a href="project1.html">Read More</a></p>
+                    <h4>Project 1: Data Analysis for XYZ Corp</h4>
+                    <p>A deep dive into sales and market trends for XYZ Corp.</p>
                 </div>
             </div>
-            <div class="project-item d-flex align-items-center">
+            
+            <!-- Project Item 2 -->
+            <div class="project-item">
                 <img src="../assets/img/project2.jpg" alt="Project 2 Image">
                 <div>
-                    <h3>Project 2: Market Research and Visualization</h3>
-                    <p>Conducted market research and visualized data trends for strategic decision-making. <a href="project2.html">Read More</a></p>
+                    <h4>Project 2: Market Research and Visualization</h4>
+                    <p>Conducted market research and visualized data trends for strategic decision-making.</p>
                 </div>
             </div>
-            <!-- Add more projects here as needed -->
+            
+            <!-- Add more project items as needed -->
         </div>
     </section>
 
