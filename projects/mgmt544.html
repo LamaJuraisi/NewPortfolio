@@ -17,6 +17,7 @@
         body {
             background-color: #121212;
             color: #f0f0f0;
+            font-family: 'Nunito', sans-serif;
         }
         .header-section {
             background-image: url('../assets/img/purduearch.png');
@@ -40,12 +41,14 @@
             margin-bottom: 0.5em;
             z-index: 1;
             position: relative;
+            font-family: 'Nunito', sans-serif;
         }
         .header-section p {
             font-size: 1.2em;
             margin-bottom: 0;
             z-index: 1;
             position: relative;
+            color: #d3d3d3;
         }
         .content-section {
             padding: 40px;
@@ -63,82 +66,82 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.html">Dive in</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                </ul>
-            </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="../index.html">Dive in</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../index.html#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Header Section with Background Image -->
-    <header class="header-section">
-        <div class="overlay"></div> <!-- Add overlay for better text readability -->
-        <h1>MGMT 544 - Database Management Systems</h1>
-        <p>Exploring data-driven solutions for inventory management and waste reduction</p>
-    </header>
+<!-- Header Section with Background Image -->
+<header class="header-section">
+    <div class="overlay"></div> <!-- Dark overlay for readability -->
+    <h1>MGMT 544 - Database Management Systems</h1>
+    <p>Exploring data-driven solutions for inventory management and waste reduction</p>
+</header>
 
-    <!-- Main Content Section -->
-    <section class="content-section">
-        <div class="container px-4 px-lg-5">
-            <h2>Objective</h2>
-            <p>Developed a database system to manage inventory for Fresh Harvest Grocery, aiming to track produce freshness and reduce waste.</p>
+<!-- Main Content Section -->
+<section class="content-section">
+    <div class="container px-4 px-lg-5">
+        <h2>Objective</h2>
+        <p>Developed a database system to manage inventory for Fresh Harvest Grocery, aiming to track produce freshness and reduce waste.</p>
 
-            <h2>Tools/Techniques Used</h2>
-            <ul>
-                <li>SQL</li>
-                <li>Google Cloud Platform (GCP) BigQuery</li>
-            </ul>
+        <h2>Tools/Techniques Used</h2>
+        <ul>
+            <li>SQL</li>
+            <li>Google Cloud Platform (GCP) BigQuery</li>
+        </ul>
 
-            <h2>Process</h2>
-            <ul>
-                <li>Designed database schema, created tables for employees, products, suppliers, purchases, and restocking logs.</li>
-                <li>Implemented alert thresholds for product expiration.</li>
-            </ul>
+        <h2>Process</h2>
+        <ul>
+            <li>Designed database schema, created tables for employees, products, suppliers, purchases, and restocking logs.</li>
+            <li>Implemented alert thresholds for product expiration.</li>
+        </ul>
 
-            <h2>Key Code Snippets</h2>
-            <div class="code-section">
-                <h3>Average Shelf Life by Product Category</h3>
-                <pre><code class="language-sql">
+        <h2>Key Code Snippets</h2>
+        <div class="code-section">
+            <h3>Average Shelf Life by Product Category</h3>
+            <pre><code class="language-sql">
 SELECT P.Category, AVG(DATE_DIFF(PI.PurchaseDate, PI.ExpirationDate, DAY))
 AS AvgShelfLife
 FROM FreshHarvestDB.ProductInventory AS PI
 JOIN FreshHarvestDB.Product AS P ON P.ProductID = PI.ProductID
 GROUP BY P.Category;
-                </code></pre>
+            </code></pre>
 
-                <h3>Employee Responsible for Restocking a Specific Product</h3>
-                <pre><code class="language-sql">
+            <h3>Employee Responsible for Restocking a Specific Product</h3>
+            <pre><code class="language-sql">
 SELECT E.EmployeeID, E.EmployeeFirstName_, E.EmployeeLastName, 
        P.ProductID, P.Category_
 FROM FreshHarvestDB.Product AS P 
 JOIN FreshHarvestDB.Employee AS E ON P.Employee_ID = E.EmployeeID
 WHERE P.ProductID = 1027;
-                </code></pre>
-            </div>
+            </code></pre>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">
-            Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5">
+        Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast
+    </div>
+</footer>
 
-    <!-- Bootstrap core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS -->
-    <script src="../js/scripts.js"></script>
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS -->
+<script src="../js/scripts.js"></script>
 </body>
 </html>
