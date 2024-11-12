@@ -46,34 +46,34 @@
             z-index: 1;
             position: relative;
         }
-        .project-list-section {
+        .content-section {
             padding: 40px;
             background: linear-gradient(180deg, #1b1b1b, #121212);
+            color: #f0f0f0;
+        }
+        .content-section h2 {
+            color: #f0f0f0;
         }
         .project-item {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 5px;
             display: flex;
             align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #222;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
         }
         .project-item img {
-            width: 120px;
-            height: auto;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
             margin-right: 20px;
-            border-radius: 5px;
         }
         .project-item h4 {
             margin: 0;
-            color: #f0f0f0;
-            font-size: 1.3em;
         }
         .project-item p {
-            color: #ccc;
             margin: 0;
-            font-size: 0.95em;
+            color: #ccc;
         }
     </style>
 </head>
@@ -88,25 +88,25 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../NewPortfolio/index.html#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../NewPortfolio/index.html#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../NewPortfolio/index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section with Background Image from mgmt544 page -->
+    <!-- Header Section with Purdue Arch Background Image -->
     <header class="header-section">
         <div class="overlay"></div> <!-- Overlay for text readability -->
         <h1>My Projects</h1>
         <p>A collection of my work showcasing data-driven insights and impactful analyses.</p>
     </header>
 
-    <!-- Projects List Section -->
-    <section class="project-list-section">
+    <!-- Main Content Section -->
+    <section class="content-section">
         <div class="container px-4 px-lg-5">
-            <!-- Project Item 1 -->
+            <!-- Project 1 -->
             <div class="project-item">
                 <img src="../assets/img/project1.jpg" alt="Project 1 Image">
                 <div>
@@ -115,7 +115,7 @@
                 </div>
             </div>
             
-            <!-- Project Item 2 -->
+            <!-- Project 2 -->
             <div class="project-item">
                 <img src="../assets/img/project2.jpg" alt="Project 2 Image">
                 <div>
@@ -123,7 +123,6 @@
                     <p>Conducted market research and visualized data trends for strategic decision-making.</p>
                 </div>
             </div>
-            
             <!-- Add more project items as needed -->
         </div>
     </section>
