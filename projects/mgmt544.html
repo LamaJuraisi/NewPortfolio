@@ -13,12 +13,32 @@
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="../css/styles.css" rel="stylesheet">
     <style>
-        /* Custom styling for the dark background */
+        /* Custom styling for the project page */
         body {
             background-color: #121212;
             color: #f0f0f0;
         }
-        h1, h2, h3, p {
+        .header-section {
+            background-image: url('../assets/img/purdue-arch.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .header-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .header-section p {
+            font-size: 1.2em;
+            margin-bottom: 0;
+        }
+        .content-section {
+            padding: 40px;
+            color: #f0f0f0;
+        }
+        .content-section h2 {
             color: #f0f0f0;
         }
         .code-section pre {
@@ -31,7 +51,7 @@
 </head>
 <body>
 
-    <!-- Navigation (same as index.html) -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="../index.html">Dive in</a>
@@ -49,11 +69,15 @@
         </div>
     </nav>
 
-    <!-- Project Content Section -->
-    <section class="project-section text-center mt-5 pt-5">
-        <div class="container px-4 px-lg-5">
-            <h1 class="text-uppercase mb-4">MGMT 544 - Database Management Systems</h1>
+    <!-- Header Section with Background Image -->
+    <header class="header-section">
+        <h1>MGMT 544 - Database Management Systems</h1>
+        <p>Explore my journey in developing a database system to manage inventory for Fresh Harvest Grocery, reducing waste and tracking produce freshness.</p>
+    </header>
 
+    <!-- Main Content Section -->
+    <section class="content-section">
+        <div class="container px-4 px-lg-5">
             <h2>Objective</h2>
             <p>Developed a database system to manage inventory for Fresh Harvest Grocery, aiming to track produce freshness and reduce waste.</p>
 
@@ -70,7 +94,7 @@
             </ul>
 
             <h2>Key Code Snippets</h2>
-            <div class="code-section text-left">
+            <div class="code-section">
                 <h3>Average Shelf Life by Product Category</h3>
                 <pre><code class="language-sql">
 SELECT P.Category, AVG(DATE_DIFF(PI.PurchaseDate, PI.ExpirationDate, DAY))
@@ -81,7 +105,6 @@ GROUP BY P.Category;
                 </code></pre>
 
                 <h3>Employee Responsible for Restocking a Specific Product</h3>
-                <p>Identifies which employee is responsible for restocking a specific product, aiding in accountability and efficient task assignment.</p>
                 <pre><code class="language-sql">
 SELECT E.EmployeeID, E.EmployeeFirstName_, E.EmployeeLastName, 
        P.ProductID, P.Category_
@@ -93,16 +116,16 @@ WHERE P.ProductID = 1027;
         </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
         <div class="container px-4 px-lg-5">
             Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast
         </div>
     </footer>
 
-    <!-- Bootstrap core JS-->
+    <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+    <!-- Core theme JS -->
     <script src="../js/scripts.js"></script>
 </body>
 </html>
