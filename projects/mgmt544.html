@@ -12,6 +12,22 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="../css/styles.css" rel="stylesheet">
+    <style>
+        /* Custom styling for the dark background */
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+        h1, h2, h3, p {
+            color: #f0f0f0;
+        }
+        .code-section pre {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
 
@@ -73,8 +89,6 @@ FROM FreshHarvestDB.Product AS P
 JOIN FreshHarvestDB.Employee AS E ON P.Employee_ID = E.EmployeeID
 WHERE P.ProductID = 1027;
                 </code></pre>
-
-                <!-- Additional code snippets as needed -->
             </div>
         </div>
     </section>
