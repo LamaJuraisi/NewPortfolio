@@ -11142,7 +11142,7 @@ body {
 }
 .more-projects-btn {
     margin-top: 1rem; /* Reduces space above the button */
-    margin-bottom: 2rem; /* Reduces space below the button */
+    margin-bottom: 4rem; /* Reduces space below the button */
 }
 
 .signup-section {
