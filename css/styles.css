@@ -11120,7 +11120,7 @@ body {
 }
 
 .projects-section {
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 .projects-section .featured-text {
   padding: 2rem;
@@ -11139,6 +11139,10 @@ body {
   .projects-section .project-text {
     padding: 5rem;
   }
+}
+.more-projects-btn {
+    margin-top: 1rem; /* Reduces space above the button */
+    margin-bottom: 2rem; /* Reduces space below the button */
 }
 
 .signup-section {
