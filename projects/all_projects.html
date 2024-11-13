@@ -32,7 +32,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            background-color: rgba(0, 0, 0, 0.5);
         }
         .header-section h1 {
             font-size: 2.5em;
@@ -51,9 +51,6 @@
             background: linear-gradient(180deg, #1b1b1b, #121212);
             color: #f0f0f0;
         }
-        .content-section h2 {
-            color: #f0f0f0;
-        }
         .project-item {
             display: flex;
             align-items: center;
@@ -67,6 +64,7 @@
             height: 100px;
             object-fit: cover;
             margin-right: 20px;
+            border-radius: 8px;
         }
         .project-item h4 {
             margin: 0;
@@ -74,6 +72,13 @@
         .project-item p {
             margin: 0;
             color: #ccc;
+        }
+        .project-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .project-item a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -96,9 +101,9 @@
         </div>
     </nav>
 
-    <!-- Header Section with Purdue Arch Background Image -->
+    <!-- Header Section with Background Image -->
     <header class="header-section">
-        <div class="overlay"></div> <!-- Overlay for text readability -->
+        <div class="overlay"></div>
         <h1>My Projects</h1>
         <p>A collection of my work showcasing data-driven insights and impactful analyses</p>
     </header>
@@ -112,32 +117,38 @@
                     <img src="../assets/img/bg-masthead.jpg" alt="MGMT 544 Project Image">
                 </a>
                 <div>
-                    <h4>MGMT 544: Database Management Systems</h4>
+                    <h4><a href="mgmt544.html">MGMT 544: Database Management Systems</a></h4>
                     <p>A deep dive into data-driven solutions for inventory management and waste reduction.</p>
                 </div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-item">
-                <img src="../assets/img/bg-signup.jpg" alt="Project 2 Image">
+                <a href="#">
+                    <img src="../assets/img/bg-signup.jpg" alt="Project 2 Image">
+                </a>
                 <div>
-                    <h4>Project 2: Market Research and Visualization</h4>
+                    <h4><a href="#">Project 2: Market Research and Visualization</a></h4>
                     <p>Conducted market research and visualized data trends for strategic decision-making.</p>
                 </div>
             </div>
 
             <!-- Additional projects as placeholders -->
             <div class="project-item">
-                <img src="../assets/img/demo-image-01.jpg" alt="Demo Project Image">
+                <a href="#">
+                    <img src="../assets/img/demo-image-01.jpg" alt="Demo Project Image">
+                </a>
                 <div>
-                    <h4>Demo Project 1</h4>
+                    <h4><a href="#">Demo Project 1</a></h4>
                     <p>Example project description for showcasing layout.</p>
                 </div>
             </div>
             <div class="project-item">
-                <img src="../assets/img/demo-image-02.jpg" alt="Demo Project Image">
+                <a href="#">
+                    <img src="../assets/img/demo-image-02.jpg" alt="Demo Project Image">
+                </a>
                 <div>
-                    <h4>Demo Project 2</h4>
+                    <h4><a href="#">Demo Project 2</a></h4>
                     <p>Example project description for showcasing layout.</p>
                 </div>
             </div>
