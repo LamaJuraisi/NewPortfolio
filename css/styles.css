@@ -11141,10 +11141,9 @@ body {
   }
 }
 .more-projects-btn {
-    margin-top: 1rem; /* Reduces space above the button */
-    margin-bottom: 4rem; /* Reduces space below the button */
+    margin-top: 4rem !important; /* Force apply with !important */
+    margin-bottom: 4rem !important; /* Ensure equal spacing */
 }
-
 .signup-section {
   padding: 10rem 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/bg-signup.jpg");
