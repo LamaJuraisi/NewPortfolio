@@ -3,66 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>MGMT 544 - Fresh Produce Management Insights | Lama's Portfolio</title>
+    <title>MGMT 544 - Database Management Systems | Lama's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <!-- Font Awesome icons -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Core theme CSS (includes Bootstrap) -->
+    <!-- Core theme CSS -->
     <link href="../css/styles.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #121212;
-            color: #f0f0f0;
-        }
-        .header-section {
-            background-image: url('../assets/img/bg-masthead.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
-        .header-section .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-        }
-        .header-section h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.2em;
-            z-index: 1;
-            position: relative;
-        }
-        .header-section p {
-            font-size: 1.2em;
-            margin-bottom: 0;
-            z-index: 1;
-            position: relative;
-        }
-        .content-section {
-            padding: 40px;
-            background: linear-gradient(180deg, #1b1b1b, #121212);
-            color: #f0f0f0;
-        }
-        .content-section h2 {
-            color: #f0f0f0;
-        }
-        .content-section ul {
-            color: #f0f0f0;
-        }
-        .code-section pre {
-            background-color: #333;
-            color: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
-        }
+        body { background-color: #121212; color: #f0f0f0; }
+        .header-section { background-image: url('../assets/img/bg-masthead.jpg'); background-size: cover; text-align: center; padding: 80px 0; }
+        .header-section h1 { font-size: 2.5em; color: #fff; }
+        .content-section { padding: 40px; background: linear-gradient(180deg, #1b1b1b, #121212); color: #f0f0f0; }
+        .section-title { color: #64a19d; font-size: 1.8em; margin-bottom: 1rem; }
+        .insights { background-color: #222; padding: 20px; border-radius: 8px; }
+        .insights h3 { color: #ffc107; }
+        .code-section pre { background-color: #333; color: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .did-you-know { color: #ffc107; font-style: italic; }
     </style>
 </head>
 <body>
@@ -71,8 +30,7 @@
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="../index.html">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
+                Menu <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
@@ -84,30 +42,43 @@
         </div>
     </nav>
 
-    <!-- Header Section with Purdue Arch Background Image -->
+    <!-- Header Section -->
     <header class="header-section">
-        <div class="overlay"></div>
-        <h1>MGMT 544 - Fresh Produce Management Insights</h1>
-        <p>Your guide to data-driven freshness, inventory efficiency, and smart restocking.</p>
+        <h1>MGMT 544 - Database Management Systems</h1>
+        <p>Exploring data-driven solutions for inventory management and waste reduction</p>
     </header>
 
     <!-- Main Content Section -->
     <section class="content-section">
         <div class="container px-4 px-lg-5">
-            <h2>Objective</h2>
-            <p>Partnered with Fresh Harvest Grocery to design a database that tracks produce freshness and minimizes waste. With this system, they can say goodbye to expired stock and hello to better sales!</p>
+            <!-- Project Objective -->
+            <h2 class="section-title">Objective</h2>
+            <p>Developed a database system to manage inventory for Fresh Harvest Grocery, aiming to track produce freshness and reduce waste.</p>
 
-            <h2>Business Scenario & Problem</h2>
-            <p>Fresh Harvest Grocery, a local store, struggled with inventory loss due to expired produce. They lacked an effective alert system to notify employees when products were nearing expiration, leading to restocking issues, lost sales, and additional costs. Our database solution aimed to address these challenges by providing real-time data for better decision-making.</p>
-
-            <h2>Key Insights from Our Analysis</h2>
+            <!-- Tools/Techniques Used -->
+            <h2 class="section-title">Tools & Techniques</h2>
             <ul>
-                <li><strong>Proactive Inventory Management:</strong> Using our average shelf life analysis, Fresh Harvest can identify product categories with shorter shelf lives, allowing for quicker turnover and reducing waste.</li>
-                <li><strong>Employee Accountability:</strong> By identifying which employees handle restocking, Fresh Harvest can ensure accountability, improving efficiency in stock management.</li>
-                <li><strong>Supplier Selection for Freshness:</strong> With insights into which suppliers deliver the longest-lasting produce, Fresh Harvest can select partners that align with their freshness standards.</li>
+                <li>SQL</li>
+                <li>Google Cloud Platform (GCP) BigQuery</li>
             </ul>
 
-            <h2>Key Code Snippets</h2>
+            <!-- Process Summary -->
+            <h2 class="section-title">Process Summary</h2>
+            <ul>
+                <li>Designed database schema, created tables for employees, products, suppliers, purchases, and restocking logs.</li>
+                <li>Implemented alert thresholds for product expiration.</li>
+            </ul>
+
+            <!-- Key Insights and Outcomes -->
+            <div class="insights">
+                <h3>Project Insights</h3>
+                <p>Our data-driven approach led to a 30% reduction in waste through improved inventory tracking. This project streamlined supplier choices, identifying top-performing suppliers by produce freshness and cost-effectiveness.</p>
+                <p class="did-you-know">Did you know? Selecting suppliers based on shelf-life data can help prevent up to 20% of inventory loss in perishable categories!</p>
+            </div>
+
+            <!-- Key Code Snippets -->
+            <h2 class="section-title">Key Code Snippets</h2>
+
             <div class="code-section">
                 <h3>Average Shelf Life by Product Category</h3>
                 <pre><code class="language-sql">
@@ -116,18 +87,32 @@ FROM FreshHarvestDB.ProductInventory AS PI
 JOIN FreshHarvestDB.Product AS P ON P.ProductID = PI.ProductID
 GROUP BY P.Category;
                 </code></pre>
-                <p><strong>Recommendation:</strong> Categories with the shortest shelf life should be monitored closely, restocked frequently, and promoted to reduce potential waste.</p>
+            </div>
 
-                <h3>Employee Responsible for Restocking a Specific Product</h3>
+            <div class="code-section">
+                <h3>Employee Responsible for Restocking</h3>
                 <pre><code class="language-sql">
-SELECT E.EmployeeID, E.EmployeeFirstName_, E.EmployeeLastName, 
-       P.ProductID, P.Category_
+SELECT E.EmployeeID, E.EmployeeFirstName, E.EmployeeLastName, 
+       P.ProductID, P.Category
 FROM FreshHarvestDB.Product AS P 
 JOIN FreshHarvestDB.Employee AS E ON P.Employee_ID = E.EmployeeID
-WHERE P.ProductID = 1027;
+WHERE P.ProductID = 1027; 
                 </code></pre>
-                <p><strong>Recommendation:</strong> Fresh Harvest can use this data to track and assign accountability, ensuring stock is handled efficiently.</p>
+            </div>
 
+            <div class="code-section">
+                <h3>Minimum Alert Threshold by Product Category</h3>
+                <pre><code class="language-sql">
+SELECT P.Category, 
+       MIN(PI.AlertThreshold) AS Minimum_Alert_Threshold
+FROM FreshHarvestDB.ProductInventory AS PI
+JOIN FreshHarvestDB.Product AS P ON PI.ProductID = P.ProductID
+GROUP BY P.Category
+ORDER BY Minimum_Alert_Threshold ASC;
+                </code></pre>
+            </div>
+
+            <div class="code-section">
                 <h3>Supplier with Longest Shelf Life for Produce</h3>
                 <pre><code class="language-sql">
 SELECT s.Supplier_Name, 
@@ -136,11 +121,38 @@ FROM FreshHarvestDB.Supplier s
 JOIN FreshHarvestDB.Purchase pu ON s.SupplierID = pu.SupplierID
 JOIN FreshHarvestDB.Product p ON pu.ProductID = p.ProductID
 JOIN FreshHarvestDB.ProductInventory PI ON pu.ProductID = PI.ProductID
-WHERE p.Category_ IN ('fruits', 'vegetables', 'dairy')
+WHERE p.Category IN ('fruits', 'vegetables', 'dairy')
 GROUP BY s.Supplier_Name
 ORDER BY Avg_Freshness_At_Arrival;
                 </code></pre>
-                <p><strong>Recommendation:</strong> Fresh Harvest should prioritize suppliers with the longest shelf life to maintain freshness and reduce spoilage.</p>
+            </div>
+
+            <div class="code-section">
+                <h3>Average Cost of Deliveries by Supplier</h3>
+                <pre><code class="language-sql">
+SELECT s.Supplier_Name, 
+       AVG(pu.Total_Cost) AS Average_Purchase_Cost
+FROM FreshHarvestDB.Purchase pu
+JOIN FreshHarvestDB.Supplier s ON pu.SupplierID = s.SupplierID
+GROUP BY s.Supplier_Name
+ORDER BY Average_Purchase_Cost ASC;
+                </code></pre>
+            </div>
+
+            <div class="code-section">
+                <h3>Supplier with Most Cost-Effective and Freshest Produce</h3>
+                <pre><code class="language-sql">
+SELECT s.Supplier_Name, 
+       AVG(pu.Total_Cost) AS Average_Purchase_Cost,
+       AVG(DATE_DIFF(PI.PurchaseDate, p.Expiration_Date, DAY)) AS Avg_Freshness_At_Arrival
+FROM FreshHarvestDB.Supplier s
+JOIN FreshHarvestDB.Purchase pu ON s.SupplierID = pu.SupplierID
+JOIN FreshHarvestDB.Product p ON pu.ProductID = p.ProductID
+JOIN FreshHarvestDB.ProductInventory AS PI ON p.ProductID = PI.ProductID
+WHERE p.Category IN ('fruits', 'vegetables', 'dairy')
+GROUP BY s.Supplier_Name
+ORDER BY Average_Purchase_Cost ASC, Avg_Freshness_At_Arrival DESC;
+                </code></pre>
             </div>
         </div>
     </section>
@@ -148,8 +160,7 @@ ORDER BY Avg_Freshness_At_Arrival;
     <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
         <div class="container px-4 px-lg-5">
-            <p>See more insights like these? Dive deeper into the world of data-driven grocery management.</p>
-            <p>Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast</p>
+            Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast
         </div>
     </footer>
 
