@@ -48,17 +48,31 @@
             background: linear-gradient(180deg, #1b1b1b, #121212);
             color: #f0f0f0;
         }
-        .section-title { color: #64a19d; font-size: 1.8em; margin-bottom: 1rem; }
-        .insights { background-color: #222; padding: 20px; border-radius: 8px; margin-top: 20px; }
-        .insights h3 { color: #ffc107; }
-        .code-section pre { background-color: #333; color: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
-        .did-you-know {
-            color: #ffc107; 
-            font-style: italic;
-            background-color: #333; 
-            padding: 15px; 
+        .section-title {
+            color: #64a19d;
+            font-size: 1.8em;
+            margin-bottom: 1rem;
+        }
+        .section-title i {
+            color: #ffc107;
+            margin-right: 8px;
+        }
+        .insights {
+            background-color: #222;
+            padding: 20px;
             border-radius: 8px;
-            margin-top: 15px;
+        }
+        .insights h3 { color: #ffc107; }
+        .code-section pre {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .did-you-know {
+            color: #ffc107;
+            font-style: italic;
         }
     </style>
 </head>
@@ -72,7 +86,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me </a></li>
                     <li class="nav-item"><a class="nav-link" href="https://lamajuraisi.github.io/NewPortfolio/projects/all_projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -80,7 +94,7 @@
         </div>
     </nav>
 
-    <!-- Header Section (Reverted to match the All Projects page) -->
+    <!-- Header Section -->
     <header class="header-section">
         <div class="overlay"></div>
         <h1>MGMT 544 - Database Management Systems</h1>
@@ -95,14 +109,14 @@
             <p>Developed a database system to manage inventory for Fresh Harvest Grocery, aiming to track produce freshness and reduce waste.</p>
 
             <!-- Tools & Techniques -->
-            <h2 class="section-title">Tools & Techniques</h2>
+            <h2 class="section-title"><i class="fas fa-database"></i>Tools & Techniques</h2>
             <ul>
                 <li>SQL</li>
                 <li>Google Cloud Platform (GCP) BigQuery</li>
             </ul>
 
             <!-- Process Summary -->
-            <h2 class="section-title">Process Summary</h2>
+            <h2 class="section-title"><i class="fas fa-tasks"></i>Process Summary</h2>
             <ul>
                 <li>Designed database schema, created tables for employees, products, suppliers, purchases, and restocking logs.</li>
                 <li>Implemented alert thresholds for product expiration.</li>
@@ -110,7 +124,7 @@
 
             <!-- Project Insights -->
             <div class="insights">
-                <h3>Project Insights</h3>
+                <h3><i class="fas fa-lightbulb"></i> Project Insights</h3>
                 <p>Our data-driven approach led to a 30% reduction in waste through improved inventory tracking. This project streamlined supplier choices, identifying top-performing suppliers by produce freshness and cost-effectiveness.</p>
                 <p class="did-you-know">Did you know? Selecting suppliers based on shelf-life data can help prevent up to 20% of inventory loss in perishable categories!</p>
             </div>
