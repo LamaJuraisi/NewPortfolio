@@ -13,10 +13,7 @@
     <!-- Core theme CSS -->
     <link href="../css/styles.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #121212;
-            color: #f0f0f0;
-        }
+        body { background-color: #121212; color: #f0f0f0; }
         .header-section {
             background-image: url('../assets/img/bg-masthead.jpg');
             background-size: cover;
@@ -35,14 +32,13 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
         .header-section h1 {
-            font-size: 2.8em;
-            font-weight: bold;
+            font-size: 2.5em;
             margin-bottom: 0.2em;
             z-index: 1;
             position: relative;
         }
         .header-section p {
-            font-size: 1.3em;
+            font-size: 1.2em;
             margin-bottom: 0;
             z-index: 1;
             position: relative;
@@ -52,31 +48,10 @@
             background: linear-gradient(180deg, #1b1b1b, #121212);
             color: #f0f0f0;
         }
-        .section-title {
-            color: #64a19d;
-            font-size: 1.8em;
-            margin-bottom: 1rem;
-        }
-        .insights {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .insights h3 {
-            color: #ffc107;
-        }
-        .code-section pre {
-            background-color: #333;
-            color: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .did-you-know {
-            color: #ffc107;
-            font-style: italic;
-        }
+        .section-title { color: #64a19d; font-size: 1.8em; margin-bottom: 1rem; }
+        .section-title i { margin-right: 0.5em; color: #ffc107; }
+        .tools-used ul { list-style: none; padding: 0; }
+        .tools-used ul li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -85,19 +60,20 @@
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="/NewPortfolio/index.html">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu <i class="fas fa-bars"></i>
+                Menu
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../all_projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://lamajuraisi.github.io/NewPortfolio/projects/all_projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section with Background Image -->
+    <!-- Header Section -->
     <header class="header-section">
         <div class="overlay"></div>
         <h1>MGMT 474 - Stock Market Analysis</h1>
@@ -107,60 +83,31 @@
     <!-- Main Content Section -->
     <section class="content-section">
         <div class="container px-4 px-lg-5">
-            <!-- Project Objective -->
-            <h2 class="section-title">Objective</h2>
+            <!-- Objective -->
+            <h2 class="section-title"><i class="fas fa-bullseye"></i>Objective</h2>
             <p>Analyze the stock performance of Nike, Adidas, and Puma to gain insights into market trends and identify top-performing predictive models for stock price forecasting.</p>
 
+            <!-- Tools & Techniques -->
+            <h2 class="section-title"><i class="fas fa-tools"></i>Tools & Techniques</h2>
+            <div class="tools-used">
+                <ul>
+                    <li>R: Used for data manipulation, visualization, and predictive modeling.</li>
+                    <li>Regression & Correlation Analysis: To identify relationships and patterns in stock data.</li>
+                    <li>K-Nearest Neighbors, Naive Bayes, Random Forest: Employed for predictive analytics.</li>
+                </ul>
+            </div>
+
             <!-- Background Information -->
-            <h2 class="section-title">Background Information</h2>
+            <h2 class="section-title"><i class="fas fa-info-circle"></i>Background Information</h2>
             <p>This project focused on evaluating key stock metrics, including share price, revenue, and profit, to provide actionable insights for portfolio management and financial decision-making.</p>
 
             <!-- Process Summary -->
-            <h2 class="section-title">Process Summary</h2>
+            <h2 class="section-title"><i class="fas fa-chart-line"></i>Process Summary</h2>
             <ul>
                 <li>Collected stock data for Nike, Adidas, and Puma from reliable market sources.</li>
                 <li>Performed regression and correlation analyses to identify patterns and trends.</li>
                 <li>Evaluated predictive models, including Random Forest, Naive Bayes, and K-Nearest Neighbors.</li>
             </ul>
-
-            <!-- Key Insights -->
-            <h2 class="section-title">Key Insights</h2>
-            <div class="insights">
-                <h3>Stock Performance</h3>
-                <p>Nike demonstrated consistent growth and market dominance, supported by strong brand recognition and innovation.</p>
-                <h3>Model Performance</h3>
-                <p>Random Forest emerged as the top-performing predictive model for forecasting stock prices.</p>
-            </div>
-
-            <!-- Code Section -->
-            <h2 class="section-title" style="margin-top: 2rem;">Code Snippets</h2>
-
-            <div class="code-section">
-                <h3>Correlation Analysis</h3>
-                <pre><code class="language-r">
-# Correlation Matrix
-cor_matrix <- cor(stock_data)
-print(cor_matrix)
-                </code></pre>
-            </div>
-
-            <div class="code-section">
-                <h3>Linear Regression Model</h3>
-                <pre><code class="language-r">
-# Linear Regression
-model <- lm(Price ~ Revenue + Profit, data = stock_data)
-summary(model)
-                </code></pre>
-            </div>
-
-            <div class="code-section">
-                <h3>Random Forest Model</h3>
-                <pre><code class="language-r">
-# Random Forest
-rf_model <- randomForest(Price ~ ., data = stock_data, ntree = 100)
-print(rf_model)
-                </code></pre>
-            </div>
         </div>
     </section>
 
@@ -173,7 +120,5 @@ print(rf_model)
 
     <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS -->
-    <script src="../js/scripts.js"></script>
 </body>
 </html>
