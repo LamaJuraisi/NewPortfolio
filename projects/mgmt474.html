@@ -9,6 +9,68 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+        .header-section {
+            background-image: url('../assets/img/bg-masthead.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .header-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .header-section h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+            z-index: 1;
+            position: relative;
+        }
+        .header-section p {
+            font-size: 1.2em;
+            margin-bottom: 0;
+            z-index: 1;
+            position: relative;
+        }
+        .content-section {
+            padding: 40px;
+            background: linear-gradient(180deg, #1b1b1b, #121212);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        pre {
+            background-color: #222;
+            color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -85,8 +147,6 @@ ggplot(data = stock_data, aes(x = Date)) +
   theme_minimal()
                 </code></pre>
                 <p><b>Interpretation:</b> Nike exhibits higher price volatility and steady growth compared to Adidas and Puma. Strong positive correlation among the three stocks suggests shared market trends.</p>
-
-                <!-- Add more code and interpretations similarly -->
             </div>
 
             <!-- Results -->
