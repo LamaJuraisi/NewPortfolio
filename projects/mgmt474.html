@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MGMT 474 - Stock Market Analysis | Lama's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-    <!-- Font Awesome icons -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Core theme CSS -->
     <link href="../css/styles.css" rel="stylesheet">
     <style>
-        body { background-color: #121212; color: #f0f0f0; }
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
         .header-section {
             background-image: url('../assets/img/bg-masthead.jpg');
             background-size: cover;
@@ -48,107 +48,96 @@
             background: linear-gradient(180deg, #1b1b1b, #121212);
             color: #f0f0f0;
         }
-        .section-title { color: #64a19d; font-size: 1.8em; margin-bottom: 1rem; }
-        .code-section pre { background-color: #333; color: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
-        .result-section img { max-width: 100%; height: auto; border-radius: 5px; margin-bottom: 20px; }
-        .tools-used ul { list-style: none; padding: 0; }
-        .tools-used ul li { margin-bottom: 5px; }
+        .section-title {
+            color: #64a19d;
+            font-size: 1.8em;
+            margin-bottom: 1rem;
+        }
+        .code-section pre {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .results-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid #64a19d;
+            padding: 10px;
+            text-align: left;
+        }
+        .results-table th {
+            background-color: #222;
+        }
+        .results-table td {
+            background-color: #121212;
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.html">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://lamajuraisi.github.io/NewPortfolio/projects/all_projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Header Section -->
     <header class="header-section">
         <div class="overlay"></div>
         <h1>MGMT 474 - Stock Market Analysis</h1>
         <p>Exploring stock performance for Nike, Adidas, and Puma</p>
     </header>
 
-    <!-- Main Content Section -->
     <section class="content-section">
         <div class="container px-4 px-lg-5">
-            <!-- Objective -->
             <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
             <p>Analyze the stock performance of Nike, Adidas, and Puma to gain insights into market trends and identify top-performing predictive models for stock price forecasting.</p>
 
-            <!-- Tools & Techniques -->
-            <h2 class="section-title"><i class="fas fa-tools"></i> Tools & Techniques</h2>
-            <ul class="tools-used">
-                <li><i class="fas fa-code"></i> R Programming</li>
-                <li><i class="fas fa-chart-line"></i> Correlation Analysis</li>
-                <li><i class="fas fa-project-diagram"></i> Random Forest</li>
-                <li><i class="fas fa-brain"></i> Naive Bayes, K-Nearest Neighbors</li>
+            <h2 class="section-title"><i class="fas fa-toolbox"></i> Tools & Techniques</h2>
+            <ul>
+                <li><strong>R Programming:</strong> Used for data cleaning, analysis, and visualization of stock trends.</li>
+                <li><strong>Correlation Analysis:</strong> Analyzed relationships between stock prices of Nike, Adidas, and Puma.</li>
+                <li><strong>Random Forest:</strong> Achieved an RMSE of 0.60 for predicting Nike's stock prices.</li>
+                <li><strong>Naive Bayes:</strong> Tested stock classification accuracy, reaching 45%.</li>
+                <li><strong>K-Nearest Neighbors:</strong> Evaluated prediction accuracy with an RMSE of 4.11.</li>
             </ul>
 
-            <!-- Process Summary -->
-            <h2 class="section-title"><i class="fas fa-stream"></i> Process Summary</h2>
+            <h2 class="section-title"><i class="fas fa-cogs"></i> Process Summary</h2>
             <ul>
                 <li>Collected stock data for Nike, Adidas, and Puma from reliable sources.</li>
                 <li>Performed regression and correlation analyses to identify patterns and trends.</li>
                 <li>Evaluated predictive models, including Random Forest and Naive Bayes.</li>
             </ul>
 
-            <!-- Key Code Snippets and Results -->
-            <h2 class="section-title"><i class="fas fa-code"></i> Key Code and Results</h2>
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Project Insights</h2>
+            <p>The Random Forest model outperformed others with the lowest RMSE, making it ideal for stock price prediction. High correlations (0.88–0.93) among Nike, Adidas, and Puma stocks support portfolio diversification strategies.</p>
 
-            <!-- Code Snippet 1 -->
-            <div class="code-section">
-                <h3>Code: Correlation Analysis</h3>
-                <pre><code class="language-r">
+            <h2 class="section-title"><i class="fas fa-code"></i> Key Code and Results</h2>
+            <h3>Code: Correlation Analysis</h3>
+            <pre><code>
 # Example R Code for Correlation Analysis
 library(ggplot2)
-data <- read.csv("stock_data.csv")
-correlation_matrix <- cor(data)
-heatmap(correlation_matrix, main = "Correlation Matrix")
-                </code></pre>
-            </div>
-            <div class="result-section">
-                <h4>Result: Correlation Matrix Heatmap</h4>
-                <img src="../assets/img/correlation-heatmap.png" alt="Correlation Matrix Heatmap">
-            </div>
+correlation_matrix <- cor(stock_data)
+ggplot(data = as.data.frame(correlation_matrix)) + 
+geom_tile(aes(x = Var1, y = Var2, fill = value))
+            </code></pre>
+            <h3>Results: Correlation Heatmap</h3>
+            <img src="../assets/img/correlation_heatmap.png" alt="Correlation Heatmap" style="width: 100%; border-radius: 8px;">
 
-            <!-- Code Snippet 2 -->
-            <div class="code-section">
-                <h3>Code: Random Forest Model</h3>
-                <pre><code class="language-r">
-# Random Forest for Stock Price Prediction
+            <h3>Code: Random Forest</h3>
+            <pre><code>
+# Random Forest Model for Stock Price Prediction
 library(randomForest)
-model <- randomForest(Price ~ ., data = train_data, ntree = 100)
-predictions <- predict(model, test_data)
-plot(predictions, test_data$Price, main = "Predicted vs Actual")
-                </code></pre>
-            </div>
-            <div class="result-section">
-                <h4>Result: Predicted vs Actual Stock Prices</h4>
-                <img src="../assets/img/predicted-vs-actual.png" alt="Predicted vs Actual Stock Prices">
-            </div>
+model <- randomForest(StockPrice ~ ., data = train_data)
+predicted <- predict(model, test_data)
+rmse <- sqrt(mean((predicted - test_data$StockPrice)^2))
+            </code></pre>
+            <h3>Results: Random Forest Predictions</h3>
+            <img src="../assets/img/random_forest_results.png" alt="Random Forest Results" style="width: 100%; border-radius: 8px;">
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast</div>
+        <div class="container px-4 px-lg-5">
+            Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast
+        </div>
     </footer>
-
-    <!-- Bootstrap core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS -->
-    <script src="../js/scripts.js"></script>
 </body>
 </html>
