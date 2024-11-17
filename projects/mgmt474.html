@@ -59,7 +59,7 @@
         }
         pre {
             background-color: #222;
-            color: #f0f0f0;
+            color: #76c7c0;
             padding: 20px;
             border-radius: 8px;
             overflow-x: auto;
@@ -69,6 +69,9 @@
         }
         ul li {
             margin-bottom: 10px;
+        }
+        .highlight {
+            color: #ffd700;
         }
     </style>
 </head>
@@ -101,32 +104,26 @@
     <!-- Content Section -->
     <section class="content-section">
         <div class="container px-4 px-lg-5">
+            <!-- Objective -->
+            <div class="section">
+                <h2><i class="fas fa-bullseye"></i> Objective</h2>
+                <p>The objective of this project was to analyze the stock performance of Nike, Adidas, and Puma. By exploring historical data and applying advanced machine learning techniques, we aimed to identify actionable insights for market trends and portfolio diversification strategies.</p>
+            </div>
+
             <!-- Project Insights -->
             <div class="section">
                 <h2><i class="fas fa-lightbulb"></i> Project Insights</h2>
-                <p>Our data-driven analysis provided actionable insights for portfolio diversification. By evaluating market trends of Nike, Adidas, and Puma, we identified predictive models with strong accuracy, optimizing decision-making for financial forecasting.</p>
-                <p><b>Did you know?</b> Sports stocks like Nike, Adidas, and Puma often move together, making them an ideal combination for portfolio diversification strategies!</p>
+                <p>Our data-driven approach revealed significant market trends. By leveraging machine learning models, we optimized decision-making processes for investors and portfolio managers.</p>
+                <p><b>Did you know?</b> Stocks like Nike, Adidas, and Puma often exhibit synchronized movements, making them ideal candidates for portfolio diversification.</p>
             </div>
 
             <!-- Tools & Techniques -->
             <div class="section">
                 <h2><i class="fas fa-tools"></i> Tools & Techniques</h2>
                 <ul>
-                    <li><b>R Programming:</b> Used extensively for data analysis, visualizations, and building regression and machine learning models.</li>
-                    <li><b>Regression Analysis:</b> Assessed linear relationships between stock prices for portfolio forecasting.</li>
-                    <li><b>KNN Algorithm:</b> Applied for short-term stock price predictions with low RMSE.</li>
-                    <li><b>Naive Bayes Classifier:</b> Evaluated stock price distributions, albeit with moderate accuracy.</li>
-                </ul>
-            </div>
-
-            <!-- Process Summary -->
-            <div class="section">
-                <h2><i class="fas fa-project-diagram"></i> Process Summary</h2>
-                <ul>
-                    <li>Collected stock data from reliable sources, including closing prices, volatility, and trading volumes.</li>
-                    <li>Conducted regression and correlation analyses for pattern identification.</li>
-                    <li>Built predictive models using Random Forest, KNN, and Naive Bayes algorithms.</li>
-                    <li>Evaluated model performance metrics for actionable insights.</li>
+                    <li><b>R Programming:</b> Extensively used for analysis and visualization.</li>
+                    <li><b>Regression Analysis:</b> Identified relationships between stock prices.</li>
+                    <li><b>KNN and Random Forest:</b> Used for predictive modeling with high accuracy.</li>
                 </ul>
             </div>
 
@@ -134,38 +131,40 @@
             <div class="section">
                 <h2><i class="fas fa-code"></i> Key Code and Results</h2>
 
-                <h3>Code: Observations</h3>
+                <h3>Code: Naive Bayes</h3>
                 <pre><code>
-# Plotting closing prices
-library(ggplot2)
-ggplot(data = stock_data, aes(x = Date)) +
-  geom_line(aes(y = NKE_Close, color = "Nike")) +
-  geom_line(aes(y = ADS_DE_Close, color = "Adidas")) +
-  geom_line(aes(y = PUM_DE_Close, color = "Puma")) +
-  labs(title = "Closing Prices Over Time for Nike, Adidas, and Puma", 
-       x = "Date", y = "Closing Price") +
-  theme_minimal()
+# Naive Bayes Classification
+library(e1071)
+nb_model <- naiveBayes(StockClass ~ ., data = train_data)
+nb_predictions <- predict(nb_model, test_data)
+confusionMatrix(nb_predictions, test_data$StockClass)
                 </code></pre>
-                <p><b>Interpretation:</b> Nike exhibits higher price volatility and steady growth compared to Adidas and Puma. Strong positive correlation among the three stocks suggests shared market trends.</p>
+                <p><b>Interpretation:</b> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
+
+                <h3>Code: K-Means Clustering</h3>
+                <pre><code>
+# K-Means Clustering
+set.seed(42)
+kmeans_result <- kmeans(stock_data[, -1], centers = 3)
+fviz_cluster(kmeans_result, data = stock_data)
+                </code></pre>
+                <p><b>Interpretation:</b> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
             </div>
 
             <!-- Results -->
             <div class="section">
                 <h2><i class="fas fa-chart-bar"></i> Results</h2>
-                <p><b>Linear Regression:</b> Revealed significant relationships between Adidas and Nike stock prices (R² = 0.72).</p>
-                <p><b>KNN:</b> Provided reliable short-term predictions for Nike with low RMSE.</p>
-                <p><b>Random Forest:</b> Outperformed other models in accuracy, validating its use for predictive stock analysis.</p>
-                <p><b>Naive Bayes:</b> Moderate accuracy (45%) indicated limited utility for stock forecasting.</p>
+                <p><b>Random Forest:</b> Achieved the highest accuracy for predictive modeling, outperforming other methods.</p>
+                <p><b>Regression Analysis:</b> Highlighted strong correlations between Nike and Adidas stock prices.</p>
+                <p><b>Naive Bayes:</b> Showed moderate performance, indicating room for improvement in modeling stock movements.</p>
             </div>
 
             <!-- Next Steps -->
             <div class="section">
                 <h2><i class="fas fa-road"></i> Next Steps</h2>
                 <ul>
-                    <li>Explore additional predictive models like Support Vector Machines (SVM) for enhanced accuracy.</li>
-                    <li>Incorporate macroeconomic indicators (e.g., GDP, inflation rates) into the analysis for deeper market insights.</li>
-                    <li>Investigate seasonal trends to refine stock price predictions.</li>
-                    <li>Monitor ongoing changes in the sportswear market to ensure adaptability in predictions.</li>
+                    <li>Integrate additional macroeconomic indicators to improve predictions.</li>
+                    <li>Explore alternative models like Support Vector Machines for enhanced accuracy.</li>
                 </ul>
             </div>
         </div>
