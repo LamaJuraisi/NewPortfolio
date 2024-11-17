@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Stock Market Analysis: Nike, Adidas, Puma | Lama's Portfolio</title>
+    <title>MGMT 474 - Stock Market Analysis | Lama's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <!-- Font Awesome icons -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -13,7 +13,10 @@
     <!-- Core theme CSS -->
     <link href="../css/styles.css" rel="stylesheet">
     <style>
-        body { background-color: #121212; color: #f0f0f0; }
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
         .header-section {
             background-image: url('../assets/img/bg-masthead.jpg');
             background-size: cover;
@@ -23,93 +26,141 @@
             color: #fff;
             position: relative;
         }
-        .header-section h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.2em;
+        .header-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
         }
-        .content-section { padding: 40px; background: linear-gradient(180deg, #1b1b1b, #121212); color: #f0f0f0; }
-        .section-title { color: #64a19d; font-size: 1.8em; margin-bottom: 1rem; }
-        .insights { background-color: #222; padding: 20px; border-radius: 8px; }
-        .insights h3 { color: #ffc107; }
-        .did-you-know { color: #ffc107; font-style: italic; }
-        .at-a-glance { background-color: #333; padding: 15px; border-radius: 5px; margin-bottom: 20px; color: #fff; }
+        .header-section h1 {
+            font-size: 2.8em;
+            font-weight: bold;
+            margin-bottom: 0.2em;
+            z-index: 1;
+            position: relative;
+        }
+        .header-section p {
+            font-size: 1.3em;
+            margin-bottom: 0;
+            z-index: 1;
+            position: relative;
+        }
+        .content-section {
+            padding: 40px;
+            background: linear-gradient(180deg, #1b1b1b, #121212);
+            color: #f0f0f0;
+        }
+        .section-title {
+            color: #64a19d;
+            font-size: 1.8em;
+            margin-bottom: 1rem;
+        }
+        .insights {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .insights h3 {
+            color: #ffc107;
+        }
+        .code-section pre {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .did-you-know {
+            color: #ffc107;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.html">Home</a>
+            <a class="navbar-brand" href="/NewPortfolio/index.html">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../projects/all_projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../all_projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
+    <!-- Header Section with Background Image -->
     <header class="header-section">
-        <h1>Stock Market Analysis: Nike, Adidas, Puma</h1>
-        <p>Comparing market trends and predictive models for leading sports brands</p>
+        <div class="overlay"></div>
+        <h1>MGMT 474 - Stock Market Analysis</h1>
+        <p>Exploring stock performance for Nike, Adidas, and Puma</p>
     </header>
 
     <!-- Main Content Section -->
     <section class="content-section">
         <div class="container px-4 px-lg-5">
-            <!-- At a Glance Summary -->
-            <div class="at-a-glance">
-                <p><strong>Objective:</strong> Analyze stock performance and predict trends for Nike, Adidas, and Puma.</p>
-                <p><strong>Impact:</strong> Identified top-performing prediction model and insights on stock diversification.</p>
-                <p><strong>Tools Used:</strong> R, Correlation Analysis, Regression, K-Nearest Neighbors, Naive Bayes, Random Forest.</p>
-            </div>
-
-            <!-- Objective -->
-            <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
-            <p>This project aimed to analyze the stock performance of leading sports brands—Nike, Adidas, and Puma—to gain insights on market trends, portfolio management, and predictive models for financial decision-making.</p>
+            <!-- Project Objective -->
+            <h2 class="section-title">Objective</h2>
+            <p>Analyze the stock performance of Nike, Adidas, and Puma to gain insights into market trends and identify top-performing predictive models for stock price forecasting.</p>
 
             <!-- Background Information -->
-            <h2 class="section-title"><i class="fas fa-info-circle"></i> Background Information</h2>
-            <p>Focusing on the U.S. market, we examined stock data for Nike, Adidas, and Puma, including share price, revenue, profit, and market capitalization.</p>
+            <h2 class="section-title">Background Information</h2>
+            <p>This project focused on evaluating key stock metrics, including share price, revenue, and profit, to provide actionable insights for portfolio management and financial decision-making.</p>
 
-            <!-- Goals -->
-            <h2 class="section-title"><i class="fas fa-check-circle"></i> Goals</h2>
+            <!-- Process Summary -->
+            <h2 class="section-title">Process Summary</h2>
             <ul>
-                <li>Analyze portfolio management practices in real-world applications.</li>
-                <li>Identify the best predictive model for stock prices.</li>
-                <li>Evaluate stock performance and provide actionable insights.</li>
+                <li>Collected stock data for Nike, Adidas, and Puma from reliable market sources.</li>
+                <li>Performed regression and correlation analyses to identify patterns and trends.</li>
+                <li>Evaluated predictive models, including Random Forest, Naive Bayes, and K-Nearest Neighbors.</li>
             </ul>
 
-            <!-- Predictions -->
-            <h2 class="section-title"><i class="fas fa-chart-line"></i> Predictions</h2>
-            <p>Our analysis predicted that Nike would likely maintain its dominance due to strong brand recognition and innovation in the market.</p>
-
-            <!-- Analytical Techniques -->
-            <h2 class="section-title"><i class="fas fa-tools"></i> Analytical Techniques</h2>
-            <ul>
-                <li><strong>Correlation Analysis:</strong> Revealed a positive correlation among stocks, indicating trends in diversification.</li>
-                <li><strong>Descriptive Statistics:</strong> Provided insights into average prices, volatility, and trading volume.</li>
-                <li><strong>Regression Analysis:</strong> Showed a linear relationship between stocks, aiding in trend prediction.</li>
-                <li><strong>K-Nearest Neighbors (KNN):</strong> Analyzed RMSE to assess model accuracy.</li>
-                <li><strong>Naive Bayes Model:</strong> Evaluated accuracy, with limitations noted in prediction.</li>
-                <li><strong>Random Forest Regression:</strong> Achieved low RMSE, ideal for short-term stock forecasting.</li>
-            </ul>
-
-            <!-- Key Insights and Findings -->
+            <!-- Key Insights -->
+            <h2 class="section-title">Key Insights</h2>
             <div class="insights">
-                <h3>Project Insights</h3>
-                <p>The project highlighted the importance of correlation among stocks for portfolio diversification. Random Forest emerged as the best predictive model due to its low error rate, making it suitable for short-term predictions.</p>
-                <p class="did-you-know">Did you know? Random Forest's low RMSE makes it 20% more accurate than traditional models in this context!</p>
+                <h3>Stock Performance</h3>
+                <p>Nike demonstrated consistent growth and market dominance, supported by strong brand recognition and innovation.</p>
+                <h3>Model Performance</h3>
+                <p>Random Forest emerged as the top-performing predictive model for forecasting stock prices.</p>
             </div>
 
-            <!-- Conclusion & Next Steps -->
-            <h2 class="section-title"><i class="fas fa-flag-checkered"></i> Conclusion & Next Steps</h2>
-            <p>Based on our analysis, we recommend focusing on Random Forest for accurate stock prediction and continuing to explore diversified portfolio options among sports brands to mitigate market risk.</p>
+            <!-- Code Section -->
+            <h2 class="section-title" style="margin-top: 2rem;">Code Snippets</h2>
+
+            <div class="code-section">
+                <h3>Correlation Analysis</h3>
+                <pre><code class="language-r">
+# Correlation Matrix
+cor_matrix <- cor(stock_data)
+print(cor_matrix)
+                </code></pre>
+            </div>
+
+            <div class="code-section">
+                <h3>Linear Regression Model</h3>
+                <pre><code class="language-r">
+# Linear Regression
+model <- lm(Price ~ Revenue + Profit, data = stock_data)
+summary(model)
+                </code></pre>
+            </div>
+
+            <div class="code-section">
+                <h3>Random Forest Model</h3>
+                <pre><code class="language-r">
+# Random Forest
+rf_model <- randomForest(Price ~ ., data = stock_data, ntree = 100)
+print(rf_model)
+                </code></pre>
+            </div>
         </div>
     </section>
 
