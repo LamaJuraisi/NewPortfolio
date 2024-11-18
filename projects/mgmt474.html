@@ -56,6 +56,15 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: #ffd700;
+        }
+        .insight-box {
+            background-color: #222;
+            color: #ffd700;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #444;
         }
         pre {
             background-color: #222;
@@ -111,7 +120,7 @@
             </div>
 
             <!-- Project Insights -->
-            <div class="section">
+            <div class="section insight-box">
                 <h2><i class="fas fa-lightbulb"></i> Project Insights</h2>
                 <p>Our data-driven approach revealed significant market trends. By leveraging machine learning models, we optimized decision-making processes for investors and portfolio managers.</p>
                 <p><b>Did you know?</b> Stocks like Nike, Adidas, and Puma often exhibit synchronized movements, making them ideal candidates for portfolio diversification.</p>
@@ -140,6 +149,7 @@ nb_predictions <- predict(nb_model, test_data)
 confusionMatrix(nb_predictions, test_data$StockClass)
                 </code></pre>
                 <p><b>Interpretation:</b> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
+                <p><b>Graph:</b> Include Naive Bayes graph visualization here.</p>
 
                 <h3>Code: K-Means Clustering</h3>
                 <pre><code>
@@ -149,6 +159,18 @@ kmeans_result <- kmeans(stock_data[, -1], centers = 3)
 fviz_cluster(kmeans_result, data = stock_data)
                 </code></pre>
                 <p><b>Interpretation:</b> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
+                <p><b>Graph:</b> Include K-Means clustering graph visualization here.</p>
+
+                <h3>Code: Random Forest Regression</h3>
+                <pre><code>
+# Random Forest Regression
+library(randomForest)
+rf_model <- randomForest(StockPrice ~ ., data = train_data, ntree = 500)
+rf_predictions <- predict(rf_model, test_data)
+rmse <- sqrt(mean((rf_predictions - test_data$StockPrice)^2))
+                </code></pre>
+                <p><b>Interpretation:</b> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
+                <p><b>Graph:</b> Include Random Forest graph visualization here.</p>
             </div>
 
             <!-- Results -->
