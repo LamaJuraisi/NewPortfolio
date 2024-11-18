@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MGMT 388 - Coffee Bean Distribution</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <style>
+        body { background-color: #121212; color: #f0f0f0; }
+        .header-section {
+            background-image: url('../assets/img/bg-masthead.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .header-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .header-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+            z-index: 1;
+            position: relative;
+        }
+        .header-section p {
+            font-size: 1.2em;
+            margin-bottom: 0;
+            z-index: 1;
+            position: relative;
+        }
+        .content-section {
+            padding: 40px;
+            background: linear-gradient(180deg, #1b1b1b, #121212);
+            color: #f0f0f0;
+        }
+        .section-title { color: #64a19d; font-size: 1.8em; margin-bottom: 1rem; }
+        .insight-box {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            margin-bottom: 30px;
+        }
+        .insight-box h3 { color: #ffc107; }
+        .did-you-know { color: #ffc107; font-style: italic; }
+        .code-section pre {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        .visual-placeholder {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #bbb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="../index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://lamajuraisi.github.io/NewPortfolio/projects/all_projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="header-section">
+    <div class="overlay"></div>
+    <h1>MGMT 388 - Coffee Bean Distribution</h1>
+    <p>Analyzing coffee trade across 94 countries from 1960 to 2023</p>
+</header>
+
+<!-- Content Section -->
+<section class="content-section">
+    <div class="container px-4 px-lg-5">
+        <!-- Objective -->
+        <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
+        <p>To analyze coffee distribution trends across 94 countries, focusing on production, imports, and exports. The project aimed to uncover insights using regression analysis and visualization techniques to highlight key patterns.</p>
+
+        <!-- Process Summary -->
+        <h2 class="section-title"><i class="fas fa-tasks"></i> Process Summary</h2>
+        <ul>
+            <li>Explored a USDA dataset detailing coffee supply and distribution from 1960 to 2023.</li>
+            <li>Cleaned the dataset by removing inconsistent records and irrelevant columns.</li>
+            <li>Performed regression analysis to study domestic consumption trends in the United States.</li>
+            <li>Visualized top exporters and importers globally, focusing on Arabica and Robusta beans.</li>
+        </ul>
+
+        <!-- Insights -->
+        <div class="insight-box">
+            <h3><i class="fas fa-lightbulb"></i> Key Insights</h3>
+            <ul>
+                <li>Arabica dominates global production, with the United States as the largest importer.</li>
+                <li>Robusta has shown steady growth, with Vietnam as the leading producer.</li>
+                <li>Analyzing trends post-2002 provided more consistent insights due to data anomalies in earlier years.</li>
+            </ul>
+        </div>
+
+        <!-- Visualizations -->
+        <h2 class="section-title"><i class="fas fa-chart-line"></i> Visualizations</h2>
+        <div>
+            <h3>Top Coffee Exporters</h3>
+            <img src="../assets/img/mgmt388_exporters.png" alt="Top Coffee Exporters Visualization">
+            <h3>Top Coffee Importers</h3>
+            <img src="../assets/img/mgmt388_importers.png" alt="Top Coffee Importers Visualization">
+        </div>
+
+        <!-- Results -->
+        <h2 class="section-title"><i class="fas fa-chart-bar"></i> Results</h2>
+        <ul>
+            <li>Regression analysis revealed that increased domestic consumption correlates strongly with imports in the US.</li>
+            <li>Data cleaning and visualization highlighted the importance of consistent timeframes for accurate analysis.</li>
+            <li>Arabica and Robusta remain the most significant contributors to global coffee trade.</li>
+        </ul>
+
+        <!-- Next Steps -->
+        <h2 class="section-title"><i class="fas fa-road"></i> Next Steps</h2>
+        <ul>
+            <li>Incorporate additional economic indicators like GDP and trade tariffs for deeper insights.</li>
+            <li>Develop machine learning models to forecast coffee trade trends.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5">
+        Copyright © Lama's Portfolio - Business Analyst | Data Enthusiast
+    </div>
+</footer>
+
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
