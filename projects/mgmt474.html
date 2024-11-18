@@ -77,7 +77,7 @@
         }
         .visual-placeholder {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
             font-size: 0.9em;
             color: #bbb;
         }
@@ -90,6 +90,13 @@
             font-weight: bold;
         }
         .navbar-light .nav-link:hover {
+            color: #64a19d;
+        }
+        .visual-title {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
             color: #64a19d;
         }
     </style>
@@ -105,7 +112,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://lamajuraisi.github.io/NewPortfolio/projects/all_projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects/all_projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -124,9 +131,7 @@
         <div class="container px-4 px-lg-5">
             <!-- Objective -->
             <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
-            <p>This project aimed to dive into the dynamics of the stock market, focusing on three iconic brands: Nike, Adidas, and Puma. Through machine learning and data visualization, we explored questions like: How do these brands' stock prices move together? and What trends can we predict for future investments? This journey was about more than numbers—it was about uncovering the stories behind the stocks.
-
-</p>
+            <p>This project aimed to dive into the dynamics of the stock market, focusing on three iconic brands: Nike, Adidas, and Puma. Through machine learning and data visualization, we explored questions like: How do these brands' stock prices move together? and What trends can we predict for future investments? This journey was about more than numbers—it was about uncovering the stories behind the stocks.</p>
 
             <!-- Process Summary -->
             <h2 class="section-title"><i class="fas fa-tasks"></i> Process Summary</h2>
@@ -152,8 +157,9 @@
                 <li><strong>KNN and Random Forest:</strong> Used for predictive modeling with high accuracy.</li>
             </ul>
 
-                        <!-- Key Code and Results -->
+            <!-- Key Code and Results -->
             <h2 class="section-title" style="margin-top: 2rem;">Key Code Snippets</h2>
+
             <h3>Naive Bayes</h3>
             <div class="code-section">
                 <pre><code>
@@ -163,11 +169,12 @@ nb_model <- naiveBayes(StockClass ~ ., data = train_data)
 nb_predictions <- predict(nb_model, test_data)
 confusionMatrix(nb_predictions, test_data$StockClass)
                 </code></pre>
+                <h4 class="visual-title">Naive Bayes Classification Results</h4>
                 <div style="text-align: center;">
                     <img src="../assets/img/mgmgt474naive.png" alt="Naive Bayes Classification Graph" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
-            <p style="margin-top: 10px;"><strong>Interpretation:</strong> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
+            <p style="margin-top: 20px;"><strong>Interpretation:</strong> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
 
             <h3>K-Means Clustering</h3>
             <div class="code-section">
@@ -177,11 +184,12 @@ set.seed(42)
 kmeans_result <- kmeans(stock_data[, -1], centers = 3)
 fviz_cluster(kmeans_result, data = stock_data)
                 </code></pre>
+                <h4 class="visual-title">K-Means Clustering Visualization</h4>
                 <div style="text-align: center;">
                     <img src="../assets/img/mgmt474kmeans.png" alt="K-Means Clustering Visualization" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
-            <p style="margin-top: 10px;"><strong>Interpretation:</strong> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
+            <p style="margin-top: 20px;"><strong>Interpretation:</strong> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
 
             <h3>Random Forest Regression</h3>
             <div class="code-section">
@@ -192,11 +200,12 @@ rf_model <- randomForest(StockPrice ~ ., data = train_data, ntree = 500)
 rf_predictions <- predict(rf_model, test_data)
 rmse <- sqrt(mean((rf_predictions - test_data$StockPrice)^2))
                 </code></pre>
+                <h4 class="visual-title">Random Forest Regression Results</h4>
                 <div style="text-align: center;">
                     <img src="../assets/img/mgmt474forest.png" alt="Random Forest Regression Graph" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
-            <p style="margin-top: 10px;"><strong>Interpretation:</strong> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
+            <p style="margin-top: 20px;"><strong>Interpretation:</strong> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
 
             <!-- Results -->
             <h2 class="section-title"><i class="fas fa-chart-bar"></i> Results</h2>
