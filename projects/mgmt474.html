@@ -139,10 +139,10 @@ nb_predictions <- predict(nb_model, test_data)
 confusionMatrix(nb_predictions, test_data$StockClass)
                 </code></pre>
                 <div style="text-align: center;">
-                    <img src="../assets/img/mgmt474naive.png" alt="Naive Bayes Classification Graph" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
+                    <img src="../assets/img/mgmgt474naive.png" alt="Naive Bayes Classification Graph" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
-            <p><strong>Interpretation:</strong> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
+            <p style="margin-top: 10px;"><strong>Interpretation:</strong> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
 
             <h3>K-Means Clustering</h3>
             <div class="code-section">
@@ -156,7 +156,7 @@ fviz_cluster(kmeans_result, data = stock_data)
                     <img src="../assets/img/mgmt474kmeans.png" alt="K-Means Clustering Visualization" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
-            <p><strong>Interpretation:</strong> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
+            <p style="margin-top: 10px;"><strong>Interpretation:</strong> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
 
             <h3>Random Forest Regression</h3>
             <div class="code-section">
@@ -171,7 +171,7 @@ rmse <- sqrt(mean((rf_predictions - test_data$StockPrice)^2))
                     <img src="../assets/img/mgmt474forest.png" alt="Random Forest Regression Graph" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
-            <p><strong>Interpretation:</strong> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
+            <p style="margin-top: 10px;"><strong>Interpretation:</strong> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
 
             <!-- Results -->
             <h2 class="section-title"><i class="fas fa-chart-bar"></i> Results</h2>
