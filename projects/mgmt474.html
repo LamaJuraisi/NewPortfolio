@@ -63,6 +63,12 @@
             margin-bottom: 20px;
             overflow-x: auto;
         }
+        .visual-placeholder {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #bbb;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +103,15 @@
             <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
             <p>The objective of this project was to analyze the stock performance of Nike, Adidas, and Puma. By exploring historical data and applying advanced machine learning techniques, we aimed to identify actionable insights for market trends and portfolio diversification strategies.</p>
 
+            <!-- Process Summary -->
+            <h2 class="section-title"><i class="fas fa-tasks"></i> Process Summary</h2>
+            <ul>
+                <li>Collected stock market data for Nike, Adidas, and Puma from reputable financial sources.</li>
+                <li>Cleaned and preprocessed data to ensure accuracy and consistency.</li>
+                <li>Applied various machine learning models to identify trends and predictive insights.</li>
+                <li>Visualized findings through R-generated plots to enhance understanding.</li>
+            </ul>
+
             <!-- Project Insights -->
             <div class="insight-box">
                 <h3><i class="fas fa-lightbulb"></i> Project Insights</h3>
@@ -113,8 +128,8 @@
             </ul>
 
             <!-- Key Code and Results -->
-            <h2 class="section-title"><i class="fas fa-code"></i> Key Code and Results</h2>
-            <h3>Code: Naive Bayes</h3>
+            <h2 class="section-title" style="margin-top: 2rem;">Key Code Snippets</h2>
+            <h3>Naive Bayes</h3>
             <div class="code-section">
                 <pre><code>
 # Naive Bayes Classification
@@ -123,10 +138,11 @@ nb_model <- naiveBayes(StockClass ~ ., data = train_data)
 nb_predictions <- predict(nb_model, test_data)
 confusionMatrix(nb_predictions, test_data$StockClass)
                 </code></pre>
+                <p class="visual-placeholder">[Graph: Include Naive Bayes classification graph here]</p>
             </div>
             <p><strong>Interpretation:</strong> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
 
-            <h3>Code: K-Means Clustering</h3>
+            <h3>K-Means Clustering</h3>
             <div class="code-section">
                 <pre><code>
 # K-Means Clustering
@@ -134,10 +150,11 @@ set.seed(42)
 kmeans_result <- kmeans(stock_data[, -1], centers = 3)
 fviz_cluster(kmeans_result, data = stock_data)
                 </code></pre>
+                <p class="visual-placeholder">[Graph: Include K-Means clustering visualization here]</p>
             </div>
             <p><strong>Interpretation:</strong> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
 
-            <h3>Code: Random Forest Regression</h3>
+            <h3>Random Forest Regression</h3>
             <div class="code-section">
                 <pre><code>
 # Random Forest Regression
@@ -146,6 +163,7 @@ rf_model <- randomForest(StockPrice ~ ., data = train_data, ntree = 500)
 rf_predictions <- predict(rf_model, test_data)
 rmse <- sqrt(mean((rf_predictions - test_data$StockPrice)^2))
                 </code></pre>
+                <p class="visual-placeholder">[Graph: Include Random Forest regression visualization here]</p>
             </div>
             <p><strong>Interpretation:</strong> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
 
