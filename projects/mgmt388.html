@@ -156,7 +156,7 @@ model = sm.OLS(y, X).fit()
 print(model.summary())
                 </code></pre>
                 <div style="text-align: center;">
-                    <img src="../assets/img/mgmt388ols.png" alt="Regression Analysis Visualization" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
+                    <img src="../assets/img/mgmt388ols.png" alt="Regression Analysis Visualization" style="max-width: 50%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
             <p><strong>Interpretation:</strong> The regression model showed an R-squared of 0.86, indicating strong predictive power. Key predictors were statistically significant at the 5% level.</p>
@@ -173,7 +173,7 @@ decomposition.plot()
 plt.show()
                 </code></pre>
                 <div style="text-align: center;">
-                    <img src="../assets/img/seasonal_plot.png" alt="Seasonal Trends in Coffee Imports" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
+                    <img src="../assets/img/seasonal_plot.png" alt="Seasonal Trends in Coffee Imports" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
 
@@ -190,7 +190,7 @@ sns.scatterplot(x=data['Bean_Imports'], y=data['Domestic_Consumption'], hue=data
 plt.show()
                 </code></pre>
                 <div style="text-align: center;">
-                    <img src="../assets/img/cluster_plot.png" alt="Cluster Analysis Visualization" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
+                    <img src="../assets/img/cluster_plot.png" alt="Cluster Analysis Visualization" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
                     <!-- Regression Analysis -->
@@ -215,7 +215,7 @@ result = import_model.fit()
 result.summary()
                 </code></pre>
                 <div class="visual-placeholder">
-                    <img src="../assets/img/mgmt388_regression.png" alt="Regression Analysis Results" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">>
+                    <img src="../assets/img/mgmt388_regression.png" alt="Regression Analysis Results" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">>
                 </div>
             </div>
             <p><strong>Insights:</strong> The model demonstrated a strong fit with an R-squared value of 0.86. Key predictors like Arabica Production, Domestic Consumption, and Year showed significant impact on coffee imports.</p>
@@ -233,7 +233,7 @@ plt.plot(Year['Arabica Production'], marker='^', label='Arabica Production')
 plt.legend()
                 </code></pre>
                 <div class="visual-placeholder">
-                    <img src="../assets/img/mgmt388production.png" alt="Coffee Type Trends" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">>
+                    <img src="../assets/img/mgmt388production.png" alt="Coffee Type Trends" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">>
                 </div>
             </div>
             <p><strong>Insights:</strong> Arabica and Robusta coffee types showed sporadic and linear growth respectively. Percent change analysis revealed greater stability in Robusta production trends.</p>
@@ -247,7 +247,7 @@ sns.scatterplot(data=us_data, x='Year', y='Domestic_Consumption')
 plt.title('US Domestic Coffee Consumption (2002-Present)')
                 </code></pre>
                 <div class="visual-placeholder">
-                    <img src="../assets/img/mgmt388consumption.png" alt="US Coffee Consumption Over Time" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">>
+                    <img src="../assets/img/mgmt388consumption.png" alt="US Coffee Consumption Over Time" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">>
                 </div>
             </div>
             <p><strong>Insights:</strong> The steady upward trend in domestic consumption highlights increasing coffee demand among US consumers over two decades.</p>
