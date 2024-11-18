@@ -208,6 +208,64 @@ plt.show()
                 <li>Implement machine learning models for advanced predictions.</li>
                 <li>Conduct sentiment analysis on consumer preferences using social media data.</li>
             </ul>
+                    <!-- Regression Analysis -->
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Regression Analysis: Predicting US Coffee Imports</h2>
+            <p>As the largest single-country importer of coffee beans, the US provides a unique dataset for predictive analysis. By examining data from 2002 to 2023, we identified key predictors such as production, domestic consumption, and time.</p>
+
+            <div class="code-section">
+                <pre><code>
+# Regression Analysis: Predicting Coffee Imports
+us_data = data[data['Country'] == 'United States'].drop(columns='Country')
+us_data = us_data.rename(columns={
+    'Bean Imports': 'Bean_Imports',
+    'Domestic Consumption': 'Domestic_Consumption',
+    'Arabica Production': 'Arabica_Production',
+    'Beginning Stocks': 'Beginning_Stocks'
+})
+
+formula = 'Bean_Imports ~ Arabica_Production + Year + Domestic_Consumption'
+import_model = smf.ols(formula, data=us_data)
+result = import_model.fit()
+
+result.summary()
+                </code></pre>
+                <div class="visual-placeholder">
+                    <img src="../assets/img/mgmt388_regression.png" alt="Regression Analysis Results">
+                </div>
+            </div>
+            <p><strong>Insights:</strong> The model demonstrated a strong fit with an R-squared value of 0.86. Key predictors like Arabica Production, Domestic Consumption, and Year showed significant impact on coffee imports.</p>
+
+            <!-- Trends in Coffee Types -->
+            <h2 class="section-title"><i class="fas fa-coffee"></i> Trends in Coffee Types Over Time</h2>
+            <p>By categorizing coffee types into Arabica, Robusta, Soluble, and Roast & Ground, we visualized their production and consumption trends globally from 2002 onwards.</p>
+
+            <div class="code-section">
+                <pre><code>
+# Coffee Type Trends
+Year_df = data.groupby('Year').sum()
+plt.plot(Year['Robusta Production'], marker='o', label='Robusta Production')
+plt.plot(Year['Arabica Production'], marker='^', label='Arabica Production')
+plt.legend()
+                </code></pre>
+                <div class="visual-placeholder">
+                    <img src="../assets/img/mgmt388_coffee_types.png" alt="Coffee Type Trends">
+                </div>
+            </div>
+            <p><strong>Insights:</strong> Arabica and Robusta coffee types showed sporadic and linear growth respectively. Percent change analysis revealed greater stability in Robusta production trends.</p>
+
+            <!-- Visualizing Consumption Trends -->
+            <h3>Visualizing US Coffee Consumption Trends</h3>
+            <div class="code-section">
+                <pre><code>
+# US Consumption Visualization
+sns.scatterplot(data=us_data, x='Year', y='Domestic_Consumption')
+plt.title('US Domestic Coffee Consumption (2002-Present)')
+                </code></pre>
+                <div class="visual-placeholder">
+                    <img src="../assets/img/mgmt388_us_consumption.png" alt="US Coffee Consumption Over Time">
+                </div>
+            </div>
+            <p><strong>Insights:</strong> The steady upward trend in domestic consumption highlights increasing coffee demand among US consumers over two decades.</p>
         </div>
     </section>
 
