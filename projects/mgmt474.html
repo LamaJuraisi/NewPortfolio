@@ -10,10 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #121212;
-            color: #f0f0f0;
-        }
+        body { background-color: #121212; color: #f0f0f0; }
         .header-section {
             background-image: url('../assets/img/bg-masthead.jpg');
             background-size: cover;
@@ -32,7 +29,7 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
         .header-section h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             margin-bottom: 0.2em;
             z-index: 1;
             position: relative;
@@ -46,18 +43,9 @@
         .content-section {
             padding: 40px;
             background: linear-gradient(180deg, #1b1b1b, #121212);
+            color: #f0f0f0;
         }
-        .section {
-            margin-bottom: 40px;
-        }
-        h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #f0f0f0; /* White for section titles */
-        }
+        .section-title { color: #64a19d; font-size: 1.8em; margin-bottom: 1rem; }
         .insight-box {
             background-color: #222;
             padding: 20px;
@@ -65,20 +53,15 @@
             border: 1px solid #444;
             margin-bottom: 30px;
         }
-        .insight-box h2 {
-            color: #ffc107; /* Yellow for insights title */
-        }
-        .did-you-know {
-            color: #ffc107; /* Yellow for "Did you know?" text */
-            font-style: italic;
-        }
-        pre {
+        .insight-box h3 { color: #ffc107; }
+        .did-you-know { color: #ffc107; font-style: italic; }
+        .code-section pre {
             background-color: #333;
-            color: #f0f0f0; /* White for code text */
+            color: #f0f0f0;
             padding: 15px;
             border-radius: 5px;
-            overflow-x: auto;
             margin-bottom: 20px;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -92,7 +75,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://lamajuraisi.github.io/NewPortfolio/projects/all_projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -111,33 +94,28 @@
     <section class="content-section">
         <div class="container px-4 px-lg-5">
             <!-- Objective -->
-            <div class="section">
-                <h2><i class="fas fa-bullseye"></i> Objective</h2>
-                <p>The objective of this project was to analyze the stock performance of Nike, Adidas, and Puma. By exploring historical data and applying advanced machine learning techniques, we aimed to identify actionable insights for market trends and portfolio diversification strategies.</p>
-            </div>
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
+            <p>The objective of this project was to analyze the stock performance of Nike, Adidas, and Puma. By exploring historical data and applying advanced machine learning techniques, we aimed to identify actionable insights for market trends and portfolio diversification strategies.</p>
 
             <!-- Project Insights -->
-            <div class="section insight-box">
-                <h2><i class="fas fa-lightbulb"></i> Project Insights</h2>
+            <div class="insight-box">
+                <h3><i class="fas fa-lightbulb"></i> Project Insights</h3>
                 <p>Our data-driven approach revealed significant market trends. By leveraging machine learning models, we optimized decision-making processes for investors and portfolio managers.</p>
                 <p class="did-you-know">Did you know? Stocks like Nike, Adidas, and Puma often exhibit synchronized movements, making them ideal candidates for portfolio diversification.</p>
             </div>
 
             <!-- Tools & Techniques -->
-            <div class="section">
-                <h2><i class="fas fa-tools"></i> Tools & Techniques</h2>
-                <ul>
-                    <li><b>R Programming:</b> Extensively used for analysis and visualization.</li>
-                    <li><b>Regression Analysis:</b> Identified relationships between stock prices.</li>
-                    <li><b>KNN and Random Forest:</b> Used for predictive modeling with high accuracy.</li>
-                </ul>
-            </div>
+            <h2 class="section-title"><i class="fas fa-tools"></i> Tools & Techniques</h2>
+            <ul>
+                <li><strong>R Programming:</strong> Extensively used for analysis and visualization.</li>
+                <li><strong>Regression Analysis:</strong> Identified relationships between stock prices.</li>
+                <li><strong>KNN and Random Forest:</strong> Used for predictive modeling with high accuracy.</li>
+            </ul>
 
             <!-- Key Code and Results -->
-            <div class="section">
-                <h2><i class="fas fa-code"></i> Key Code and Results</h2>
-
-                <h3>Code: Naive Bayes</h3>
+            <h2 class="section-title"><i class="fas fa-code"></i> Key Code and Results</h2>
+            <h3>Code: Naive Bayes</h3>
+            <div class="code-section">
                 <pre><code>
 # Naive Bayes Classification
 library(e1071)
@@ -145,18 +123,22 @@ nb_model <- naiveBayes(StockClass ~ ., data = train_data)
 nb_predictions <- predict(nb_model, test_data)
 confusionMatrix(nb_predictions, test_data$StockClass)
                 </code></pre>
-                <p><b>Interpretation:</b> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
+            </div>
+            <p><strong>Interpretation:</strong> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
 
-                <h3>Code: K-Means Clustering</h3>
+            <h3>Code: K-Means Clustering</h3>
+            <div class="code-section">
                 <pre><code>
 # K-Means Clustering
 set.seed(42)
 kmeans_result <- kmeans(stock_data[, -1], centers = 3)
 fviz_cluster(kmeans_result, data = stock_data)
                 </code></pre>
-                <p><b>Interpretation:</b> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
+            </div>
+            <p><strong>Interpretation:</strong> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
 
-                <h3>Code: Random Forest Regression</h3>
+            <h3>Code: Random Forest Regression</h3>
+            <div class="code-section">
                 <pre><code>
 # Random Forest Regression
 library(randomForest)
@@ -164,26 +146,23 @@ rf_model <- randomForest(StockPrice ~ ., data = train_data, ntree = 500)
 rf_predictions <- predict(rf_model, test_data)
 rmse <- sqrt(mean((rf_predictions - test_data$StockPrice)^2))
                 </code></pre>
-                <p><b>Interpretation:</b> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
             </div>
-        </div>
-    </section>
+            <p><strong>Interpretation:</strong> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
+
             <!-- Results -->
-            <div class="section">
-                <h2><i class="fas fa-chart-bar"></i> Results</h2>
-                <p><b>Random Forest:</b> Achieved the highest accuracy for predictive modeling, outperforming other methods.</p>
-                <p><b>Regression Analysis:</b> Highlighted strong correlations between Nike and Adidas stock prices.</p>
-                <p><b>Naive Bayes:</b> Showed moderate performance, indicating room for improvement in modeling stock movements.</p>
-            </div>
+            <h2 class="section-title"><i class="fas fa-chart-bar"></i> Results</h2>
+            <ul>
+                <li><strong>Random Forest:</strong> Achieved the highest accuracy for predictive modeling, outperforming other methods.</li>
+                <li><strong>Regression Analysis:</strong> Highlighted strong correlations between Nike and Adidas stock prices.</li>
+                <li><strong>Naive Bayes:</strong> Showed moderate performance, indicating room for improvement in modeling stock movements.</li>
+            </ul>
 
             <!-- Next Steps -->
-            <div class="section">
-                <h2><i class="fas fa-road"></i> Next Steps</h2>
-                <ul>
-                    <li>Integrate additional macroeconomic indicators to improve predictions.</li>
-                    <li>Explore alternative models like Support Vector Machines for enhanced accuracy.</li>
-                </ul>
-            </div>
+            <h2 class="section-title"><i class="fas fa-road"></i> Next Steps</h2>
+            <ul>
+                <li>Integrate additional macroeconomic indicators to improve predictions.</li>
+                <li>Explore alternative models like Support Vector Machines for enhanced accuracy.</li>
+            </ul>
         </div>
     </section>
 
