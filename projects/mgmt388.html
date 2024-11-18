@@ -109,14 +109,78 @@
         <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
         <p>To analyze coffee distribution trends across 94 countries, focusing on production, imports, and exports. The project aimed to uncover insights using regression analysis and visualization techniques to highlight key patterns.</p>
 
-        <!-- Process Summary -->
-        <h2 class="section-title"><i class="fas fa-tasks"></i> Process Summary</h2>
+        <!-- Tools & Packages -->
+        <h2 class="section-title"><i class="fas fa-tools"></i> Tools & Packages Used</h2>
         <ul>
-            <li>Explored a USDA dataset detailing coffee supply and distribution from 1960 to 2023.</li>
-            <li>Cleaned the dataset by removing inconsistent records and irrelevant columns.</li>
-            <li>Performed regression analysis to study domestic consumption trends in the United States.</li>
-            <li>Visualized top exporters and importers globally, focusing on Arabica and Robusta beans.</li>
+            <li><strong>Tools:</strong> Python (Jupyter Notebook), pandas, matplotlib, seaborn, scikit-learn.</li>
+            <li><strong>Packages:</strong> 
+                <ul>
+                    <li><code>pandas</code>: For data cleaning and manipulation.</li>
+                    <li><code>matplotlib</code> and <code>seaborn</code>: For visualizations.</li>
+                    <li><code>scikit-learn</code>: For regression analysis and prediction modeling.</li>
+                </ul>
+            </li>
         </ul>
+
+        <!-- Key Code Snippets -->
+        <h2 class="section-title"><i class="fas fa-code"></i> Key Code Snippets</h2>
+
+        <h3>Data Cleaning and Preprocessing</h3>
+        <div class="code-section">
+            <pre><code>
+# Load data
+import pandas as pd
+data = pd.read_csv('coffee_data.csv')
+
+# Drop irrelevant columns
+data = data.drop(['Unnamed: 0', 'Region'], axis=1)
+
+# Handle missing values
+data = data.fillna(data.mean())
+
+print(data.head())
+            </code></pre>
+        </div>
+
+        <h3>Top Importers Visualization</h3>
+        <div class="code-section">
+            <pre><code>
+# Visualizing top coffee importers
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+top_importers = data.groupby('Country')['Imports'].sum().sort_values(ascending=False).head(10)
+plt.figure(figsize=(10, 6))
+sns.barplot(x=top_importers.values, y=top_importers.index, palette='viridis')
+plt.title('Top Coffee Importing Countries')
+plt.xlabel('Total Imports (tons)')
+plt.ylabel('Country')
+plt.show()
+            </code></pre>
+            <div style="text-align: center;">
+                <img src="../assets/img/mgmt388_importers.png" alt="Top Coffee Importers Visualization" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
+            </div>
+        </div>
+
+        <h3>Regression Analysis</h3>
+        <div class="code-section">
+            <pre><code>
+# Linear regression to predict coffee imports
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+X = data[['Production', 'Exports']]
+y = data['Imports']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+print('Coefficients:', model.coef_)
+print('Intercept:', model.intercept_)
+            </code></pre>
+        </div>
 
         <!-- Insights -->
         <div class="insight-box">
@@ -126,15 +190,6 @@
                 <li>Robusta has shown steady growth, with Vietnam as the leading producer.</li>
                 <li>Analyzing trends post-2002 provided more consistent insights due to data anomalies in earlier years.</li>
             </ul>
-        </div>
-
-        <!-- Visualizations -->
-        <h2 class="section-title"><i class="fas fa-chart-line"></i> Visualizations</h2>
-        <div>
-            <h3>Top Coffee Exporters</h3>
-            <img src="../assets/img/mgmt388_exporters.png" alt="Top Coffee Exporters Visualization">
-            <h3>Top Coffee Importers</h3>
-            <img src="../assets/img/mgmt388_importers.png" alt="Top Coffee Importers Visualization">
         </div>
 
         <!-- Results -->
