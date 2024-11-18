@@ -63,12 +63,6 @@
             margin-bottom: 20px;
             overflow-x: auto;
         }
-        .visual-placeholder {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #bbb;
-        }
         img {
             display: block;
             margin: 20px auto;
@@ -105,7 +99,35 @@
 <!-- Content Section -->
 <section class="content-section">
     <div class="container px-4 px-lg-5">
-        <!-- Comprehensive Regression Analysis -->
+        <!-- Objective -->
+        <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
+        <p>This project involved exploring the global coffee trade over 60 years and analyzing trends, regression patterns, and factors influencing the distribution of coffee beans among 94 countries. Our goal was to derive actionable insights and predictive models to understand the coffee economy better.</p>
+
+        <!-- Tools & Techniques -->
+        <h2 class="section-title"><i class="fas fa-tools"></i> Tools & Techniques</h2>
+        <ul>
+            <li><strong>Python:</strong> For data analysis and visualization (pandas, seaborn, matplotlib).</li>
+            <li><strong>Statsmodels:</strong> For advanced regression analysis.</li>
+            <li><strong>Jupyter Notebook:</strong> For collaborative coding and visualizations.</li>
+        </ul>
+
+        <!-- Process Summary -->
+        <h2 class="section-title"><i class="fas fa-tasks"></i> Process Summary</h2>
+        <ul>
+            <li>Analyzed a dataset with global coffee trade data (94 countries, 1960-2023).</li>
+            <li>Filtered data for key countries and trends, such as the US and coffee types.</li>
+            <li>Performed regression analysis to predict imports and domestic consumption.</li>
+            <li>Visualized trends in coffee types over time using production data.</li>
+        </ul>
+
+        <!-- Project Insights -->
+        <div class="insight-box">
+            <h3><i class="fas fa-lightbulb"></i> Project Insights</h3>
+            <p>Our analysis revealed a significant increase in the consumption of coffee, particularly in the US. Predictive models allowed us to anticipate trends in bean imports, and production insights informed global trade strategies.</p>
+            <p class="did-you-know">Did you know? Arabica coffee has experienced higher average percent changes in production compared to Robusta over the past 20 years!</p>
+        </div>
+
+        <!-- Regression Analysis -->
         <h2 class="section-title"><i class="fas fa-chart-line"></i> Regression Analysis: US Coffee Imports</h2>
 
         <h3>Preparing Data for Regression</h3>
@@ -164,25 +186,6 @@ print(result.summary())
             <li><strong>R-squared:</strong> 0.86, indicating the model explains 86% of the variance in imports.</li>
             <li><strong>Significance:</strong> All predictors are significant at the 5% level, with p-values of 0.01, 0.02, and 0.00.</li>
         </ul>
-
-        <!-- Coffee Type Trends -->
-        <h2 class="section-title"><i class="fas fa-coffee"></i> Coffee Type Trends</h2>
-        <div class="code-section">
-            <pre><code>
-# Trends for Arabica and Robusta Production
-plt.plot(data.groupby('Year')['Arabica Production'].sum(), marker='o', label='Arabica')
-plt.plot(data.groupby('Year')['Robusta Production'].sum(), marker='^', label='Robusta')
-
-plt.legend()
-plt.title('Arabica and Robusta Production Trends')
-plt.ylabel('Production (thousands of bags)')
-plt.show()
-            </code></pre>
-            <div style="text-align: center;">
-                <img src="../assets/img/mgmt388_coffee_types.png" alt="Coffee Production Trends" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
-            </div>
-        </div>
-        <p style="margin-top: 10px;"><strong>Interpretation:</strong> Arabica production shows sporadic growth, while Robusta demonstrates a steady linear increase.</p>
     </div>
 </section>
 
