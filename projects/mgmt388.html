@@ -145,8 +145,7 @@
             <!-- Regression Analysis -->
             <h3>Regression Analysis</h3>
             <div class="code-section">
-                <pre><code>
-# Linear Regression for Predicting Imports
+                <pre><code># Linear Regression for Predicting Imports
 import statsmodels.api as sm
 
 X = us_data[['Arabica_Production', 'Year', 'Domestic_Consumption']]
@@ -161,65 +160,10 @@ print(model.summary())
             </div>
             <p><strong>Interpretation:</strong> The regression model showed an R-squared of 0.86, indicating strong predictive power. Key predictors were statistically significant at the 5% level.</p>
 
-            <!-- Time-Series Trends -->
-            <h3>Time-Series Trends</h3>
-            <div class="code-section">
-                <pre><code>
-# Seasonal Decomposition of Coffee Imports
-from statsmodels.tsa.seasonal import seasonal_decompose
-
-decomposition = seasonal_decompose(us_data['Bean_Imports'], model='additive', period=12)
-decomposition.plot()
-plt.show()
-                </code></pre>
                 <div style="text-align: center;">
                     <img src="../assets/img/seasonal_plot.png" alt="Seasonal Trends in Coffee Imports" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
                 </div>
-            </div>
-
-            <!-- Cluster Analysis -->
-            <h3>Cluster Analysis</h3>
-            <div class="code-section">
-                <pre><code>
-# K-Means Clustering
-from sklearn.cluster import KMeans
-
-kmeans = KMeans(n_clusters=3, random_state=42)
-data['Cluster'] = kmeans.fit_predict(data[['Bean_Imports', 'Domestic_Consumption']])
-sns.scatterplot(x=data['Bean_Imports'], y=data['Domestic_Consumption'], hue=data['Cluster'])
-plt.show()
-                </code></pre>
-                <div style="text-align: center;">
-                    <img src="../assets/img/cluster_plot.png" alt="Cluster Analysis Visualization" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
-                </div>
-            </div>
-                    <!-- Regression Analysis -->
-            <h2 class="section-title"><i class="fas fa-chart-line"></i> Regression Analysis: Predicting US Coffee Imports</h2>
-            <p>As the largest single-country importer of coffee beans, the US provides a unique dataset for predictive analysis. By examining data from 2002 to 2023, we identified key predictors such as production, domestic consumption, and time.</p>
-
-            <div class="code-section">
-                <pre><code>
-# Regression Analysis: Predicting Coffee Imports
-us_data = data[data['Country'] == 'United States'].drop(columns='Country')
-us_data = us_data.rename(columns={
-    'Bean Imports': 'Bean_Imports',
-    'Domestic Consumption': 'Domestic_Consumption',
-    'Arabica Production': 'Arabica_Production',
-    'Beginning Stocks': 'Beginning_Stocks'
-})
-
-formula = 'Bean_Imports ~ Arabica_Production + Year + Domestic_Consumption'
-import_model = smf.ols(formula, data=us_data)
-result = import_model.fit()
-
-result.summary()
-                </code></pre>
-                <div class="visual-placeholder">
-                    <img src="../assets/img/mgmt388_regression.png" alt="Regression Analysis Results" style="max-width: 60%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">>
-                </div>
-            </div>
-            <p><strong>Insights:</strong> The model demonstrated a strong fit with an R-squared value of 0.86. Key predictors like Arabica Production, Domestic Consumption, and Year showed significant impact on coffee imports.</p>
-
+            </div> 
             <!-- Trends in Coffee Types -->
             <h2 class="section-title"><i class="fas fa-coffee"></i> Trends in Coffee Types Over Time</h2>
             <p>By categorizing coffee types into Arabica, Robusta, Soluble, and Roast & Ground, we visualized their production and consumption trends globally from 2002 onwards.</p>
