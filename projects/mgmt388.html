@@ -105,107 +105,84 @@
 <!-- Content Section -->
 <section class="content-section">
     <div class="container px-4 px-lg-5">
-        <!-- Objective -->
-        <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
-        <p>To analyze coffee distribution trends across 94 countries, focusing on production, imports, and exports. The project aimed to uncover insights using regression analysis and visualization techniques to highlight key patterns.</p>
+        <!-- Comprehensive Regression Analysis -->
+        <h2 class="section-title"><i class="fas fa-chart-line"></i> Regression Analysis: US Coffee Imports</h2>
 
-        <!-- Tools & Packages -->
-        <h2 class="section-title"><i class="fas fa-tools"></i> Tools & Packages Used</h2>
-        <ul>
-            <li><strong>Tools:</strong> Python (Jupyter Notebook), pandas, matplotlib, seaborn, scikit-learn.</li>
-            <li><strong>Packages:</strong> 
-                <ul>
-                    <li><code>pandas</code>: For data cleaning and manipulation.</li>
-                    <li><code>matplotlib</code> and <code>seaborn</code>: For visualizations.</li>
-                    <li><code>scikit-learn</code>: For regression analysis and prediction modeling.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <!-- Key Code Snippets -->
-        <h2 class="section-title"><i class="fas fa-code"></i> Key Code Snippets</h2>
-
-        <h3>Data Cleaning and Preprocessing</h3>
+        <h3>Preparing Data for Regression</h3>
         <div class="code-section">
             <pre><code>
-# Load data
-import pandas as pd
-data = pd.read_csv('coffee_data.csv')
+# Filter data for US from 2002 onwards
+us_data = data[data['Country'] == 'United States']
+us_data = us_data[us_data['Year'] >= 2002]
 
-# Drop irrelevant columns
-data = data.drop(['Unnamed: 0', 'Region'], axis=1)
+# Rename columns for easy referencing
+us_data = us_data.rename(columns={
+    'Bean Imports': 'Bean_Imports',
+    'Domestic Consumption': 'Domestic_Consumption',
+    'Arabica Production': 'Arabica_Production',
+    'Beginning Stocks': 'Beginning_Stocks'
+})
 
-# Handle missing values
-data = data.fillna(data.mean())
-
-print(data.head())
+# Display the cleaned data
+display(us_data.head())
             </code></pre>
         </div>
 
-        <h3>Top Importers Visualization</h3>
+        <h3>Domestic Consumption Trends</h3>
         <div class="code-section">
             <pre><code>
-# Visualizing top coffee importers
-import matplotlib.pyplot as plt
+# Visualize domestic consumption over time
 import seaborn as sns
+import matplotlib.pyplot as plt
 
-top_importers = data.groupby('Country')['Imports'].sum().sort_values(ascending=False).head(10)
-plt.figure(figsize=(10, 6))
-sns.barplot(x=top_importers.values, y=top_importers.index, palette='viridis')
-plt.title('Top Coffee Importing Countries')
-plt.xlabel('Total Imports (tons)')
-plt.ylabel('Country')
+sns.scatterplot(data=us_data, x='Year', y='Domestic_Consumption')
+plt.title('US Domestic Consumption Over Time')
+plt.ylabel('Consumption (thousands of bags)')
 plt.show()
             </code></pre>
             <div style="text-align: center;">
-                <img src="../assets/img/mgmt388importers.png" alt="Top Coffee Importers Visualization" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
+                <img src="../assets/img/mgmt388_us_consumption.png" alt="US Domestic Consumption Trends" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
             </div>
         </div>
+        <p style="margin-top: 10px;"><strong>Observation:</strong> Domestic consumption has shown a consistent upward trend over time.</p>
 
-        <h3>Regression Analysis</h3>
+        <h3>Regression Model</h3>
         <div class="code-section">
             <pre><code>
-# Linear regression to predict coffee imports
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
+# Predicting US imports using regression
+import statsmodels.formula.api as smf
 
-X = data[['Production', 'Exports']]
-y = data['Imports']
+formula = 'Bean_Imports ~ Arabica_Production + Year + Domestic_Consumption'
+model = smf.ols(formula, data=us_data)
+result = model.fit()
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-print('Coefficients:', model.coef_)
-print('Intercept:', model.intercept_)
+print(result.summary())
             </code></pre>
         </div>
+        <p style="margin-top: 10px;"><strong>Key Findings:</strong></p>
+        <ul>
+            <li><strong>R-squared:</strong> 0.86, indicating the model explains 86% of the variance in imports.</li>
+            <li><strong>Significance:</strong> All predictors are significant at the 5% level, with p-values of 0.01, 0.02, and 0.00.</li>
+        </ul>
 
-        <!-- Insights -->
-        <div class="insight-box">
-            <h3><i class="fas fa-lightbulb"></i> Key Insights</h3>
-            <ul>
-                <li>Arabica dominates global production, with the United States as the largest importer.</li>
-                <li>Robusta has shown steady growth, with Vietnam as the leading producer.</li>
-                <li>Analyzing trends post-2002 provided more consistent insights due to data anomalies in earlier years.</li>
-            </ul>
+        <!-- Coffee Type Trends -->
+        <h2 class="section-title"><i class="fas fa-coffee"></i> Coffee Type Trends</h2>
+        <div class="code-section">
+            <pre><code>
+# Trends for Arabica and Robusta Production
+plt.plot(data.groupby('Year')['Arabica Production'].sum(), marker='o', label='Arabica')
+plt.plot(data.groupby('Year')['Robusta Production'].sum(), marker='^', label='Robusta')
+
+plt.legend()
+plt.title('Arabica and Robusta Production Trends')
+plt.ylabel('Production (thousands of bags)')
+plt.show()
+            </code></pre>
+            <div style="text-align: center;">
+                <img src="../assets/img/mgmt388_coffee_types.png" alt="Coffee Production Trends" style="max-width: 100%; height: auto; margin-top: 10px; border: 1px solid #444; border-radius: 5px;">
+            </div>
         </div>
-
-        <!-- Results -->
-        <h2 class="section-title"><i class="fas fa-chart-bar"></i> Results</h2>
-        <ul>
-            <li>Regression analysis revealed that increased domestic consumption correlates strongly with imports in the US.</li>
-            <li>Data cleaning and visualization highlighted the importance of consistent timeframes for accurate analysis.</li>
-            <li>Arabica and Robusta remain the most significant contributors to global coffee trade.</li>
-        </ul>
-
-        <!-- Next Steps -->
-        <h2 class="section-title"><i class="fas fa-road"></i> Next Steps</h2>
-        <ul>
-            <li>Incorporate additional economic indicators like GDP and trade tariffs for deeper insights.</li>
-            <li>Develop machine learning models to forecast coffee trade trends.</li>
-        </ul>
+        <p style="margin-top: 10px;"><strong>Interpretation:</strong> Arabica production shows sporadic growth, while Robusta demonstrates a steady linear increase.</p>
     </div>
 </section>
 
