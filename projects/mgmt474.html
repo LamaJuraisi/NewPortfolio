@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,16 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
-
-    <!-- Additional Styles -->
     <style>
-        /* General Styling */
         body {
             background-color: #121212;
             color: #f0f0f0;
         }
-
-        /* Header Section */
         .header-section {
             background-image: url('../assets/img/bg-masthead.jpg');
             background-size: cover;
@@ -29,7 +23,6 @@
             color: #fff;
             position: relative;
         }
-
         .header-section .overlay {
             position: absolute;
             top: 0;
@@ -38,38 +31,33 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
         }
-
         .header-section h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 0.2em;
             z-index: 1;
             position: relative;
         }
-
         .header-section p {
             font-size: 1.2em;
             margin-bottom: 0;
             z-index: 1;
             position: relative;
         }
-
-        /* Content Section */
         .content-section {
             padding: 40px;
             background: linear-gradient(180deg, #1b1b1b, #121212);
         }
-
-        /* Section Titles */
+        .section {
+            margin-bottom: 40px;
+        }
         h2 {
             font-size: 1.8em;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #64a19d; /* Updated to match MGMT 544 */
+            color: #f0f0f0; /* White for section titles */
         }
-
-        /* Insights Section */
         .insight-box {
             background-color: #222;
             padding: 20px;
@@ -77,59 +65,23 @@
             border: 1px solid #444;
             margin-bottom: 30px;
         }
-
         .insight-box h2 {
-            color: #ffc107; /* Insight title in yellow */
+            color: #ffc107; /* Yellow for insights title */
         }
-
-        .insight-box p {
-            color: #f0f0f0;
-        }
-
         .did-you-know {
-            color: #ffc107; /* Yellow for Did You Know */
+            color: #ffc107; /* Yellow for "Did you know?" text */
             font-style: italic;
         }
-
-        /* Code Snippets */
         pre {
             background-color: #333;
-            color: #76c7c0; /* Code text color */
+            color: #f0f0f0; /* White for code text */
             padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
             margin-bottom: 20px;
         }
-
-        /* Navigation Bar */
-        nav.navbar {
-            background-color: #121212;
-        }
-
-        nav.navbar .nav-link {
-            color: #f0f0f0;
-            transition: color 0.2s ease;
-        }
-
-        nav.navbar .nav-link:hover {
-            color: #ffc107;
-        }
-
-        nav.navbar.navbar-light.scrolled {
-            background-color: #ffffff !important;
-            transition: background-color 0.2s ease;
-        }
-
-        nav.navbar.navbar-light.scrolled .nav-link {
-            color: #121212 !important;
-        }
-
-        nav.navbar.navbar-light.scrolled .nav-link:hover {
-            color: #64a19d !important;
-        }
     </style>
 </head>
-
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -140,7 +92,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me </a></li>
                     <li class="nav-item"><a class="nav-link" href="https://lamajuraisi.github.io/NewPortfolio/projects/all_projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -148,7 +100,7 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="header-section">
         <div class="overlay"></div>
         <h1>MGMT 474 - Stock Market Analysis</h1>
@@ -194,7 +146,6 @@ nb_predictions <- predict(nb_model, test_data)
 confusionMatrix(nb_predictions, test_data$StockClass)
                 </code></pre>
                 <p><b>Interpretation:</b> The Naive Bayes model achieved 45% accuracy, highlighting potential limitations in modeling stock price movements.</p>
-                <p><b>Graph:</b> Include Naive Bayes graph visualization here.</p>
 
                 <h3>Code: K-Means Clustering</h3>
                 <pre><code>
@@ -204,7 +155,6 @@ kmeans_result <- kmeans(stock_data[, -1], centers = 3)
 fviz_cluster(kmeans_result, data = stock_data)
                 </code></pre>
                 <p><b>Interpretation:</b> K-Means successfully grouped stocks into clusters based on performance metrics, aiding in portfolio diversification strategies.</p>
-                <p><b>Graph:</b> Include K-Means clustering graph visualization here.</p>
 
                 <h3>Code: Random Forest Regression</h3>
                 <pre><code>
@@ -215,9 +165,9 @@ rf_predictions <- predict(rf_model, test_data)
 rmse <- sqrt(mean((rf_predictions - test_data$StockPrice)^2))
                 </code></pre>
                 <p><b>Interpretation:</b> The Random Forest model achieved a very low RMSE, indicating high predictive accuracy. This method proved effective for modeling stock price trends.</p>
-                <p><b>Graph:</b> Include Random Forest graph visualization here.</p>
             </div>
-
+        </div>
+    </section>
             <!-- Results -->
             <div class="section">
                 <h2><i class="fas fa-chart-bar"></i> Results</h2>
